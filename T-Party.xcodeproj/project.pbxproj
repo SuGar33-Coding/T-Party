@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		001DEFEF28F3DBD800B9A6EA /* T_PartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DEFEE28F3DBD800B9A6EA /* T_PartyApp.swift */; };
+		001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */; };
 		001DEFF128F3DBD800B9A6EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DEFF028F3DBD800B9A6EA /* ContentView.swift */; };
 		001DEFF328F3DBDB00B9A6EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */; };
 		001DEFF628F3DBDB00B9A6EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		001DEFEB28F3DBD800B9A6EA /* T-Party.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T-Party.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		001DEFEE28F3DBD800B9A6EA /* T_PartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_PartyApp.swift; sourceTree = "<group>"; };
+		001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPartyApp.swift; sourceTree = "<group>"; };
 		001DEFF028F3DBD800B9A6EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		001DEFED28F3DBD800B9A6EA /* T-Party */ = {
 			isa = PBXGroup;
 			children = (
-				001DEFEE28F3DBD800B9A6EA /* T_PartyApp.swift */,
+				001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */,
 				001DEFF028F3DBD800B9A6EA /* ContentView.swift */,
 				001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */,
 				001DEFF428F3DBDB00B9A6EA /* Preview Content */,
@@ -138,7 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				001DEFF128F3DBD800B9A6EA /* ContentView.swift in Sources */,
-				001DEFEF28F3DBD800B9A6EA /* T_PartyApp.swift in Sources */,
+				001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
