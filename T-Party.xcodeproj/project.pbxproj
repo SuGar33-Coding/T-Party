@@ -11,6 +11,7 @@
 		001DEFF128F3DBD800B9A6EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DEFF028F3DBD800B9A6EA /* ContentView.swift */; };
 		001DEFF328F3DBDB00B9A6EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */; };
 		001DEFF628F3DBDB00B9A6EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */; };
+		1386BFC828F7821A00063C51 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386BFC728F7821A00063C51 /* OptionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		001DEFF028F3DBD800B9A6EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1386BFC728F7821A00063C51 /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OptionsView.swift; path = ../../../.Trash/OptionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */,
 				001DEFF028F3DBD800B9A6EA /* ContentView.swift */,
+				1386BFC728F7821A00063C51 /* OptionsView.swift */,
 				001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */,
 				001DEFF428F3DBDB00B9A6EA /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				001DEFF128F3DBD800B9A6EA /* ContentView.swift in Sources */,
 				001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */,
+				1386BFC828F7821A00063C51 /* OptionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
