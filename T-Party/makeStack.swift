@@ -12,7 +12,7 @@ func makeStack(data: ListData) -> some View {
     var body: some View{
         HStack(spacing: 100) {
             VStack{
-                Image(data.image)
+                Image(data.getImage())
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 100, height: 100, alignment: .center)
@@ -20,7 +20,7 @@ func makeStack(data: ListData) -> some View {
                 .overlay(
                     Text(data.transportType)
                         .font(.system(size:18))
-                        .foregroundColor(data.color)
+                        .foregroundColor(data.getColor())
                         .fontWeight(.bold)
                         .padding(5),
                     alignment: .bottom)
@@ -40,3 +40,5 @@ func makeStack(data: ListData) -> some View {
     }
     return body
 }
+
+

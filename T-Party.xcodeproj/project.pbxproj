@@ -63,10 +63,10 @@
 				1386BFCB28F7948500063C51 /* ListData.swift */,
 				001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */,
 				001DEFF028F3DBD800B9A6EA /* ContentView.swift */,
+				00B5F40A28F7B91F007F5E46 /* OptionsView.swift */,
 				1386BFCF28F79CF400063C51 /* makeStack.swift */,
 				001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */,
 				001DEFF428F3DBDB00B9A6EA /* Preview Content */,
-				00B5F40A28F7B91F007F5E46 /* OptionsView.swift */,
 			);
 			path = "T-Party";
 			sourceTree = "<group>";
