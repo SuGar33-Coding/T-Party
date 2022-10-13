@@ -8,8 +8,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("this is content view")
-}
+        Text("this is me, content view.")
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
