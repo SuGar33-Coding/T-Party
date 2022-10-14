@@ -1,5 +1,5 @@
 //
-//  ListData.swift
+//  ListData.swift #we should refactor this because that is a very stupid name for this
 //  T-Party
 //
 //  Created by Emily Mallaber on 10/12/22.
@@ -30,6 +30,24 @@ struct ListData {
         }
         return thisColor
     }
+    
+    func getColor2() -> Color {
+        var thisColor: Color
+        switch(self.transportType){
+        case("GL"):
+            thisColor = Color("GLGreen2")
+        case("BL"):
+            thisColor = Color("BLBlue2")
+        case("RL"):
+            thisColor = Color("RLRed2")
+        case("OL"):
+            thisColor = Color("OLOrange2")
+        default:
+            thisColor = Color("BusYellow2")
+        }
+        return thisColor
+    }
+
     
     func getImage() -> String {
         var thisImage: String

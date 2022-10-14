@@ -13,8 +13,10 @@
 		001DEFF628F3DBDB00B9A6EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */; };
 		00B5F40B28F7B91F007F5E46 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F40A28F7B91F007F5E46 /* OptionsView.swift */; };
 		00B5F40E28F7BB88007F5E46 /* Trains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F40D28F7BB88007F5E46 /* Trains.swift */; };
+		135B101428F8BE3B0009B8A9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 135B101328F8BE3B0009B8A9 /* MapKit.framework */; };
+		135B101628F8C2C70009B8A9 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B101528F8C2C60009B8A9 /* ScheduleView.swift */; };
+		135B101828F8D3750009B8A9 /* SingleListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B101728F8D3750009B8A9 /* SingleListItemView.swift */; };
 		1386BFCC28F7948500063C51 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386BFCB28F7948500063C51 /* ListData.swift */; };
-		1386BFD028F79CF400063C51 /* makeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386BFCF28F79CF400063C51 /* makeStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +27,11 @@
 		001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		00B5F40A28F7B91F007F5E46 /* OptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		00B5F40D28F7BB88007F5E46 /* Trains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trains.swift; sourceTree = "<group>"; };
+		135B101128F8BE3B0009B8A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		135B101328F8BE3B0009B8A9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		135B101528F8C2C60009B8A9 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		135B101728F8D3750009B8A9 /* SingleListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleListItemView.swift; sourceTree = "<group>"; };
 		1386BFCB28F7948500063C51 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
-		1386BFCF28F79CF400063C51 /* makeStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = makeStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				135B101428F8BE3B0009B8A9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +51,7 @@
 			children = (
 				001DEFED28F3DBD800B9A6EA /* T-Party */,
 				001DEFEC28F3DBD800B9A6EA /* Products */,
+				135B101228F8BE3B0009B8A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,12 +66,10 @@
 		001DEFED28F3DBD800B9A6EA /* T-Party */ = {
 			isa = PBXGroup;
 			children = (
-				00B5F40C28F7BB62007F5E46 /* Models */,
-				1386BFCB28F7948500063C51 /* ListData.swift */,
+				135B101128F8BE3B0009B8A9 /* Info.plist */,
 				001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */,
-				001DEFF028F3DBD800B9A6EA /* ContentView.swift */,
-				00B5F40A28F7B91F007F5E46 /* OptionsView.swift */,
-				1386BFCF28F79CF400063C51 /* makeStack.swift */,
+				00B5F40C28F7BB62007F5E46 /* Models */,
+				135B101928F90BA30009B8A9 /* Views */,
 				001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */,
 				001DEFF428F3DBDB00B9A6EA /* Preview Content */,
 			);
@@ -83,8 +88,28 @@
 			isa = PBXGroup;
 			children = (
 				00B5F40D28F7BB88007F5E46 /* Trains.swift */,
+				1386BFCB28F7948500063C51 /* ListData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		135B101228F8BE3B0009B8A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				135B101328F8BE3B0009B8A9 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		135B101928F90BA30009B8A9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				135B101728F8D3750009B8A9 /* SingleListItemView.swift */,
+				135B101528F8C2C60009B8A9 /* ScheduleView.swift */,
+				00B5F40A28F7B91F007F5E46 /* OptionsView.swift */,
+				001DEFF028F3DBD800B9A6EA /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				001DEFF128F3DBD800B9A6EA /* ContentView.swift in Sources */,
-				1386BFD028F79CF400063C51 /* makeStack.swift in Sources */,
 				00B5F40E28F7BB88007F5E46 /* Trains.swift in Sources */,
+				135B101828F8D3750009B8A9 /* SingleListItemView.swift in Sources */,
+				135B101628F8C2C70009B8A9 /* ScheduleView.swift in Sources */,
 				001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */,
 				00B5F40B28F7B91F007F5E46 /* OptionsView.swift in Sources */,
 				1386BFCC28F7948500063C51 /* ListData.swift in Sources */,
@@ -294,6 +320,7 @@
 				DEVELOPMENT_TEAM = GPQ9QH5YRX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "T-Party/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -323,6 +350,7 @@
 				DEVELOPMENT_TEAM = GPQ9QH5YRX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "T-Party/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
