@@ -8,7 +8,15 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("this is me, content view.")
+        NavigationView {
+            VStack {
+                NavigationLink(destination: OptionsView()){
+                    Text("Go to options view.")
+                }
+                .navigationTitle("")
+                .navigationBarHidden(true)
+            }
+        }
     }
 }
 
