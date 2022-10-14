@@ -7,6 +7,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var trains = [Train]()
+
     var body: some View {
         NavigationView {
             VStack {
@@ -15,6 +17,11 @@ struct ContentView: View {
                 }
                 .navigationTitle("")
                 .navigationBarHidden(true)
+            }
+        }
+        .onAppear() {
+            Api().loadData { (trains) in
+                self.trains = trains
             }
         }
     }

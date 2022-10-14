@@ -10,6 +10,8 @@
 		001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */; };
 		001DEFF328F3DBDB00B9A6EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */; };
 		001DEFF628F3DBDB00B9A6EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */; };
+		00964F1F28F9E905006523CF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F1E28F9E905006523CF /* Api.swift */; };
+		00964F2228F9EE1C006523CF /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 00964F2128F9EE1C006523CF /* JSONAPI */; };
 		00B5F40E28F7BB88007F5E46 /* Trains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F40D28F7BB88007F5E46 /* Trains.swift */; };
 		00B5F41F28F9E605007F5E46 /* SingleListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */; };
 		00B5F42028F9E605007F5E46 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41D28F9E605007F5E46 /* ScheduleView.swift */; };
@@ -23,6 +25,7 @@
 		001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPartyApp.swift; sourceTree = "<group>"; };
 		001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		00964F1E28F9E905006523CF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		00B5F40D28F7BB88007F5E46 /* Trains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trains.swift; sourceTree = "<group>"; };
 		00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListItemView.swift; sourceTree = "<group>"; };
 		00B5F41D28F9E605007F5E46 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00964F2228F9EE1C006523CF /* JSONAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +70,7 @@
 				001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */,
 				001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */,
 				001DEFF428F3DBDB00B9A6EA /* Preview Content */,
+				00964F1E28F9E905006523CF /* Api.swift */,
 			);
 			path = "T-Party";
 			sourceTree = "<group>";
@@ -114,6 +119,9 @@
 			dependencies = (
 			);
 			name = "T-Party";
+			packageProductDependencies = (
+				00964F2128F9EE1C006523CF /* JSONAPI */,
+			);
 			productName = "T-Party";
 			productReference = 001DEFEB28F3DBD800B9A6EA /* T-Party.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +150,9 @@
 				Base,
 			);
 			mainGroup = 001DEFE228F3DBD800B9A6EA;
+			packageReferences = (
+				00964F2028F9EE1C006523CF /* XCRemoteSwiftPackageReference "JSONAPI" */,
+			);
 			productRefGroup = 001DEFEC28F3DBD800B9A6EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -174,6 +185,7 @@
 				001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */,
 				00B5F42128F9E605007F5E46 /* OptionsView.swift in Sources */,
 				1386BFCC28F7948500063C51 /* ListData.swift in Sources */,
+				00964F1F28F9E905006523CF /* Api.swift in Sources */,
 				00B5F41F28F9E605007F5E46 /* SingleListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,6 +387,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00964F2028F9EE1C006523CF /* XCRemoteSwiftPackageReference "JSONAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattpolzin/JSONAPI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00964F2128F9EE1C006523CF /* JSONAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00964F2028F9EE1C006523CF /* XCRemoteSwiftPackageReference "JSONAPI" */;
+			productName = JSONAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 001DEFE328F3DBD800B9A6EA /* Project object */;
 }
