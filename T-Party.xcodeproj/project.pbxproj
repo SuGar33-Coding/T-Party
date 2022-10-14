@@ -103,6 +103,8 @@
 			dependencies = (
 			);
 			name = "T-Party";
+			packageProductDependencies = (
+			);
 			productName = "T-Party";
 			productReference = 001DEFEB28F3DBD800B9A6EA /* T-Party.app */;
 			productType = "com.apple.product-type.application";
@@ -131,6 +133,8 @@
 				Base,
 			);
 			mainGroup = 001DEFE228F3DBD800B9A6EA;
+			packageReferences = (
+			);
 			productRefGroup = 001DEFEC28F3DBD800B9A6EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

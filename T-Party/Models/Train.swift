@@ -7,25 +7,37 @@
 
 import Foundation
 
-struct Train: Codable, Identifiable {
-    var id: Int
-    var userId: Int
-    var title: String
-    var completed: Bool
+struct LinesResponse: Codable {
+    var data: [Train]
+}
+
+struct Train: Codable {
+    struct linksStruct: Codable {
+        var `self`: String
+    }
+    struct attributesStruct: Codable {
+        var color: String
+    }
+    
+    var attributes: attributesStruct
+    var id: String
+    var links: linksStruct
+    var type: String
 }
 
 class Api : ObservableObject{
     @Published var trains = [Train]()
     
     func loadData(completion:@escaping ([Train]) -> ()) {
-        guard let url = URL(string: "https://api-v3.mbta.com/lines?page%5Boffset%5D=0&page%5Blimit%5D=5&sort=short_name&fields%5Bline%5D=short_name") else {
+        guard let url = URL(string: "https://api-v3.mbta.com/lines?page%5Boffset%5D=0&page%5Blimit%5D=5&fields%5Bline%5D=color") else {
             print("Invalid url...")
             return
         }
         var urlReq = URLRequest(url: url)
         urlReq.setValue("application/vnd.api+json", forHTTPHeaderField: "accept")
         URLSession.shared.dataTask(with: urlReq) { data, response, error in
-            let trains = try! JSONDecoder().decode([Train].self, from: data!)
+            let res = try! JSONDecoder().decode(LinesResponse.self, from: data!)
+            let trains = res.data
             print(trains)
             DispatchQueue.main.async {
                 completion(trains)
