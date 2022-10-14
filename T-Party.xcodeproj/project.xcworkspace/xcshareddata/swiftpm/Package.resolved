@@ -1,0 +1,23 @@
+{
+  "pins" : [
+    {
+      "identity" : "jsonapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattpolzin/JSONAPI.git",
+      "state" : {
+        "revision" : "661dfc3ffec1ba3a201fd067877da2f3c553f236",
+        "version" : "5.1.0"
+      }
+    },
+    {
+      "identity" : "poly",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattpolzin/Poly.git",
+      "state" : {
+        "revision" : "c108e9e0a2904134719b082f6c18d64406afc6db",
+        "version" : "2.6.0"
+      }
+    }
+  ],
+  "version" : 2
+}

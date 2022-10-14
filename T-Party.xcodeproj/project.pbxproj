@@ -13,6 +13,7 @@
 		001DEFF628F3DBDB00B9A6EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */; };
 		00B5F40B28F7B91F007F5E46 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F40A28F7B91F007F5E46 /* OptionsView.swift */; };
 		00B5F40E28F7BB88007F5E46 /* Train.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F40D28F7BB88007F5E46 /* Train.swift */; };
+		00B5F41428F9ACEF007F5E46 /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 00B5F41328F9ACEF007F5E46 /* JSONAPI */; };
 		1386BFCC28F7948500063C51 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386BFCB28F7948500063C51 /* ListData.swift */; };
 		1386BFD028F79CF400063C51 /* makeStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386BFCF28F79CF400063C51 /* makeStack.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B5F41428F9ACEF007F5E46 /* JSONAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +106,7 @@
 			);
 			name = "T-Party";
 			packageProductDependencies = (
+				00B5F41328F9ACEF007F5E46 /* JSONAPI */,
 			);
 			productName = "T-Party";
 			productReference = 001DEFEB28F3DBD800B9A6EA /* T-Party.app */;
@@ -134,6 +137,7 @@
 			);
 			mainGroup = 001DEFE228F3DBD800B9A6EA;
 			packageReferences = (
+				00B5F41228F9ACEE007F5E46 /* XCRemoteSwiftPackageReference "JSONAPI" */,
 			);
 			productRefGroup = 001DEFEC28F3DBD800B9A6EA /* Products */;
 			projectDirPath = "";
@@ -367,6 +371,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00B5F41228F9ACEE007F5E46 /* XCRemoteSwiftPackageReference "JSONAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattpolzin/JSONAPI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00B5F41328F9ACEF007F5E46 /* JSONAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00B5F41228F9ACEE007F5E46 /* XCRemoteSwiftPackageReference "JSONAPI" */;
+			productName = JSONAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 001DEFE328F3DBD800B9A6EA /* Project object */;
 }
