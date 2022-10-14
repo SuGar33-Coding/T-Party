@@ -18,7 +18,7 @@ struct ScheduleView: View {
     var body: some View {
         Text(self.senderKey.transportType)
             .font(.system(size:80))
-            .foregroundColor(self.senderKey.getColor2())
+            .foregroundColor(self.senderKey.getColor())
     }
 }
 
