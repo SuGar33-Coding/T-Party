@@ -8,32 +8,35 @@
 import SwiftUI
 
 struct ScheduleView: View {
-
+    
     var senderKey: ListData
     
     init(senderKey: ListData) {
         self.senderKey = senderKey
-        }
+    }
     
     var body: some View {
-        Text(self.senderKey.transportType)
-            .font(.system(size:80))
-            .foregroundColor(self.senderKey.getColor2())
+        ZStack{
+            VStack{
+                Text(senderKey.getFullName())
+                    .font(.system(size:50))
+                    .foregroundColor(self.senderKey.getColor2())
+                    .fontWeight(.bold)
+                Text(senderKey.getBound() + " to " + senderKey.destination)
+                    .font(.system(size:24))
+                Text("Arriving to " + senderKey.currentStation + " in").italic()
+                ScrollView{
+                    var schedSize = senderKey.sched.count
+                    ForEach(0..<schedSize) { pos in
+                        SingleScheduleItemView(info: senderKey, position: pos)
+                }
+            }
+        }
     }
 }
-
-struct ScheduleView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScheduleView(senderKey:
-                        ListData(
-                            transportType: "OL",
-                            destination: "Forest Hills",
-                            currentStation: "Ruggles",
-                            sched: [
-                                "4 min",
-                                "16 min",
-                                "21 min"
-            ]
-        ))
+                            }
+    struct ScheduleView_Previews: PreviewProvider {
+        static var previews: some View {
+            ScheduleView(senderKey: tList[1])
+        }
     }
-}

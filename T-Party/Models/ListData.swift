@@ -41,11 +41,28 @@ struct ListData {
         case("RL"):
             thisColor = Color("RLRed2")
         case("OL"):
-            thisColor = Color("OLOrang2e")
+            thisColor = Color("OLOrange2")
         default:
             thisColor = Color("BusYellow2")
         }
         return thisColor
+    }
+    
+    func getFullName() -> String {
+        var thisName: String
+        switch(self.transportType){
+        case("GL"):
+            thisName = "Green Line"
+        case("BL"):
+            thisName = "Blue Line"
+        case("RL"):
+            thisName = "Red Line"
+        case("OL"):
+            thisName = "Orange Line"
+        default:
+            thisName = self.transportType + " Bus"
+        }
+        return thisName
     }
     
     func getImage() -> String {
@@ -64,6 +81,10 @@ struct ListData {
         }
         return thisImage
     }
+    
+    func getBound() -> String {
+        return("Outbound")
+    }
 }
 
 var tList = [
@@ -74,7 +95,10 @@ var tList = [
         sched: [
             "4 min",
             "16 min",
-            "21 min"
+            "21 min",
+            "27 min",
+            "32 min",
+            "46 min",
         ]
     ),
     ListData(
@@ -84,8 +108,10 @@ var tList = [
         sched: [
             "7 min",
             "19 min",
-            "23 min"
-        ]
+            "23 min",
+            "25 min",
+            "34 min",
+            "36 min"]
     ),
     ListData(
         transportType: "64",
@@ -94,7 +120,10 @@ var tList = [
         sched: [
             "11 min",
             "19 min",
-            "27 min"
+            "27 min",
+            "28 min",
+            "29 min",
+            "34 min"
         ]
     ),
     ListData(
@@ -104,7 +133,10 @@ var tList = [
         sched: [
             "14 min",
             "28 min",
-            "31 min"
+            "31 min",
+            "34 min",
+            "39 min",
+            "42 min"
         ]
     ),
     ListData(
@@ -114,7 +146,10 @@ var tList = [
         sched: [
             "19 min",
             "24 min",
-            "39 min"
+            "39 min",
+            "48 min",
+            "49 min",
+            "54 min"
         ]
     ),
     ListData(
@@ -124,7 +159,10 @@ var tList = [
         sched: [
             "31 min",
             "38 min",
-            "44 min"
+            "44 min",
+            "47 min",
+            "49 min",
+            "53 min"
         ]
     ),
     ListData(
@@ -134,7 +172,10 @@ var tList = [
         sched: [
             "32 min",
             "46 min",
-            "52 min"
+            "52 min",
+            "59 min",
+            "69 min",
+            "420 min"
         ]
     ),
 ]
