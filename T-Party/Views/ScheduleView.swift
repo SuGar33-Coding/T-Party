@@ -26,8 +26,8 @@ struct ScheduleView: View {
                     .font(.system(size:24))
                 Text("Arriving to " + senderKey.currentStation + " in").italic()
                 ScrollView{
-                    var schedSize = senderKey.sched.count
-                    ForEach(0..<schedSize) { pos in
+                    let schedSize = senderKey.sched.count
+                    ForEach(0..<schedSize, id: \.self) { pos in
                         SingleScheduleItemView(info: senderKey, position: pos)
                 }
             }
