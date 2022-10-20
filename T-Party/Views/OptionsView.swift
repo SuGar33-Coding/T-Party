@@ -8,16 +8,22 @@ struct OptionsView: View {
     @State var isActive = false
     
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 40) {
-                ForEach(tList, id: \.transportType) { option in
-                    NavigationLink(destination: ScheduleView(senderKey: option)) {
+        NavigationView {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 40) {
+                    ForEach(tList, id: \.transportType) { option in
+                        NavigationLink(
+                            destination: ScheduleView(senderKey: option)
+                                .navigationTitle(option.getFullName())
+                        ) {
                             SingleListItemView(thisOne: option)
+                        }
                     }
-                    .navigationTitle("")
-                    .navigationBarTitleDisplayMode(.inline)
                 }
+                
             }
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.automatic)
         }
     }
 }

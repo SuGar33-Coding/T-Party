@@ -10,19 +10,29 @@ struct ContentView: View {
     @State var trains = [Train]()
 
     var body: some View {
-        NavigationView {
-            VStack {
-                NavigationLink(destination: OptionsView()){
-                    Text("Go to options view.")
+//        NavigationView {
+//            VStack {
+//                NavigationLink(destination: OptionsView()){
+//                    Text("Go to options view.")
+//                }
+//                .navigationTitle("")
+//                .navigationBarHidden(true)
+//            }
+//        }
+//        .onAppear() {
+//            Api().loadData { (trains) in
+//                self.trains = trains
+//            }
+//        }
+        TabView {
+            OptionsView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
                 }
-                .navigationTitle("")
-                .navigationBarHidden(true)
-            }
-        }
-        .onAppear() {
-            Api().loadData { (trains) in
-                self.trains = trains
-            }
+            NearbyView()
+                .tabItem {
+                    Label("Nearby", systemImage: "location")
+                }
         }
     }
 }

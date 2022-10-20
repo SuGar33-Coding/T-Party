@@ -12,6 +12,7 @@
 		001DEFF628F3DBDB00B9A6EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */; };
 		00964F1F28F9E905006523CF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F1E28F9E905006523CF /* Api.swift */; };
 		00964F2228F9EE1C006523CF /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 00964F2128F9EE1C006523CF /* JSONAPI */; };
+		00964F242900FD80006523CF /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F232900FD80006523CF /* NearbyView.swift */; };
 		00B5F40E28F7BB88007F5E46 /* Trains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F40D28F7BB88007F5E46 /* Trains.swift */; };
 		00B5F41F28F9E605007F5E46 /* SingleListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */; };
 		00B5F42028F9E605007F5E46 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41D28F9E605007F5E46 /* ScheduleView.swift */; };
@@ -27,6 +28,7 @@
 		001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		00964F1E28F9E905006523CF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		00964F232900FD80006523CF /* NearbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
 		00B5F40D28F7BB88007F5E46 /* Trains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trains.swift; sourceTree = "<group>"; };
 		00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListItemView.swift; sourceTree = "<group>"; };
 		00B5F41D28F9E605007F5E46 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				00B5F41D28F9E605007F5E46 /* ScheduleView.swift */,
 				00B5F41E28F9E605007F5E46 /* OptionsView.swift */,
 				00B5F42228F9E677007F5E46 /* ContentView.swift */,
+				00964F232900FD80006523CF /* NearbyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B5F42028F9E605007F5E46 /* ScheduleView.swift in Sources */,
+				00964F242900FD80006523CF /* NearbyView.swift in Sources */,
 				00B5F40E28F7BB88007F5E46 /* Trains.swift in Sources */,
 				00B5F42328F9E677007F5E46 /* ContentView.swift in Sources */,
 				001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */,
