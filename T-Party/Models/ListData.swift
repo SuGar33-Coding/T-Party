@@ -13,6 +13,7 @@ struct ListData {
     let destination: String
     let currentStation: String
     let sched: [String]
+    let id = UUID()
     
     var color: Color {
         switch(transportType) {
