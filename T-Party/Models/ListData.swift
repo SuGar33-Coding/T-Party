@@ -8,11 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct ListData {
+struct ListData: Identifiable {
     var transportType: String
     var destination: String
     var currentStation: String
     var sched: [String]
+    var id = UUID()
     
     func getColor() -> Color {
         var thisColor: Color
@@ -178,6 +179,36 @@ var tList = [
             "420 min"
         ]
     ),
+    
+    ListData(
+        transportType: "GL",
+        destination: "Kenmore",
+        currentStation: "BU East",
+        sched: [
+            "12 min",
+            "16 min",
+            "22 min",
+            "29 min",
+            "69 min",
+            "420 min"
+        ]
+    ),
+    
+    ListData(
+        transportType: "GL",
+        destination: "Boston College",
+        currentStation: "BU East",
+        sched: [
+            "7 min",
+            "12 min",
+            "20 min",
+            "34 min",
+            "40 min",
+            "90 min"
+        ]
+    ),
 ]
+
+
 
 

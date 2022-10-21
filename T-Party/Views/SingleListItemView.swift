@@ -22,12 +22,12 @@ struct SingleListItemView: View {
         self.image = thisOne.getImage()
         self.destination = thisOne.destination
         self.currentStation = thisOne.currentStation
-        }
+    }
     
     var body: some View {
-            HStack(spacing: 100) {
-                VStack{
-                    Image(self.image)
+        HStack(spacing: 100) {
+            VStack{
+                Image(self.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100, alignment: .center)
@@ -39,17 +39,17 @@ struct SingleListItemView: View {
                             .fontWeight(.bold)
                             .padding(5),
                         alignment: .bottom)
-                    Text(self.destination)
-                        .font(.system(size:16))
-                        .fontWeight(.bold)
-                }
-                    VStack{
-                        Text(self.currentStation)
-                        Text(self.sched[0])
-                        .font(.system(size:35))
-                        .fontWeight(.bold)
-                        Text(self.sched[1])
-                        Text(self.sched[2])
+                Text(self.destination)
+                    .font(.system(size:16))
+                    .fontWeight(.bold)
+            }
+            VStack{
+                Text(self.currentStation)
+                Text(self.sched[0])
+                    .font(.system(size:35))
+                    .fontWeight(.bold)
+                Text(self.sched[1])
+                Text(self.sched[2])
             }
         }
     }

@@ -11,10 +11,10 @@ struct OptionsView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 40) {
-                    ForEach(tList, id: \.transportType) { option in
+                    ForEach(tList, id: \.id) { option in
                         NavigationLink(
                             destination: ScheduleView(senderKey: option)
-                                .navigationTitle(option.getFullName())
+                                .navigationTitle(option.currentStation)
                         ) {
                             SingleListItemView(thisOne: option)
                         }

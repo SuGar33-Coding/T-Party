@@ -19,6 +19,9 @@
 		00B5F42128F9E605007F5E46 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41E28F9E605007F5E46 /* OptionsView.swift */; };
 		00B5F42328F9E677007F5E46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F42228F9E677007F5E46 /* ContentView.swift */; };
 		1366811B28FA370600511925 /* SingleScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366811A28FA370600511925 /* SingleScheduleItemView.swift */; };
+		1366811D2902055C00511925 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366811C2902055C00511925 /* LocationManager.swift */; };
+		1366811F2902067500511925 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366811E2902067500511925 /* MapView.swift */; };
+		13668121290207A100511925 /* Stoptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13668120290207A100511925 /* Stoptions.swift */; };
 		1386BFCC28F7948500063C51 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386BFCB28F7948500063C51 /* ListData.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +38,9 @@
 		00B5F41E28F9E605007F5E46 /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
 		00B5F42228F9E677007F5E46 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1366811A28FA370600511925 /* SingleScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleScheduleItemView.swift; sourceTree = "<group>"; };
+		1366811C2902055C00511925 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		1366811E2902067500511925 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		13668120290207A100511925 /* Stoptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stoptions.swift; sourceTree = "<group>"; };
 		1386BFCB28F7948500063C51 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				1386BFCB28F7948500063C51 /* ListData.swift */,
+				1366811C2902055C00511925 /* LocationManager.swift */,
+				13668120290207A100511925 /* Stoptions.swift */,
 				00B5F40D28F7BB88007F5E46 /* Trains.swift */,
 			);
 			path = Models;
@@ -102,6 +110,7 @@
 				00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */,
 				1366811A28FA370600511925 /* SingleScheduleItemView.swift */,
 				00B5F41D28F9E605007F5E46 /* ScheduleView.swift */,
+				1366811E2902067500511925 /* MapView.swift */,
 				00B5F41E28F9E605007F5E46 /* OptionsView.swift */,
 				00B5F42228F9E677007F5E46 /* ContentView.swift */,
 				00964F232900FD80006523CF /* NearbyView.swift */,
@@ -186,14 +195,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				00B5F42028F9E605007F5E46 /* ScheduleView.swift in Sources */,
+				1366811F2902067500511925 /* MapView.swift in Sources */,
 				00964F242900FD80006523CF /* NearbyView.swift in Sources */,
 				00B5F40E28F7BB88007F5E46 /* Trains.swift in Sources */,
+				1366811D2902055C00511925 /* LocationManager.swift in Sources */,
 				00B5F42328F9E677007F5E46 /* ContentView.swift in Sources */,
 				001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */,
 				1366811B28FA370600511925 /* SingleScheduleItemView.swift in Sources */,
 				00B5F42128F9E605007F5E46 /* OptionsView.swift in Sources */,
 				1386BFCC28F7948500063C51 /* ListData.swift in Sources */,
 				00964F1F28F9E905006523CF /* Api.swift in Sources */,
+				13668121290207A100511925 /* Stoptions.swift in Sources */,
 				00B5F41F28F9E605007F5E46 /* SingleListItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

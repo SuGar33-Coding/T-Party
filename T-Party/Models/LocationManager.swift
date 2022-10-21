@@ -6,3 +6,6 @@
 //
 
 import Foundation
+import CoreLocation
+import CoreLocationUI
+

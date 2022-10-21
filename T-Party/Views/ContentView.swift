@@ -5,6 +5,7 @@
 //  Created by Gabriel Klavans on 10/10/22.
 //
 import SwiftUI
+import CoreLocation
 
 struct ContentView: View {
     @State var trains = [Train]()
