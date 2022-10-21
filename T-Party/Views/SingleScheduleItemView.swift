@@ -22,7 +22,7 @@ struct SingleScheduleItemView: View {
                 Text(info.sched[position])
                     .font(.system(size: 40))
                     .fontWeight(.bold)
-                    .foregroundColor(info.getColor2())
+                    .foregroundColor(info.color2)
         }
     }
 }

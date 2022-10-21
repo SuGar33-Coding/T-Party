@@ -14,7 +14,7 @@ struct OptionsView: View {
                     ForEach(tList, id: \.transportType) { option in
                         NavigationLink(
                             destination: ScheduleView(senderKey: option)
-                                .navigationTitle(option.getFullName())
+                                .navigationTitle(option.fullName)
                         ) {
                             SingleListItemView(thisOne: option)
                         }
