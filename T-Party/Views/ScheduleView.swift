@@ -18,11 +18,11 @@ struct ScheduleView: View {
     var body: some View {
         ZStack{
             VStack{
-                Text(senderKey.getFullName())
+                Text(senderKey.fullName)
                     .font(.system(size:50))
-                    .foregroundColor(self.senderKey.getColor2())
+                    .foregroundColor(self.senderKey.color2)
                     .fontWeight(.bold)
-                Text(senderKey.getBound() + " to " + senderKey.destination)
+                Text(senderKey.direction + " to " + senderKey.destination)
                     .font(.system(size:24))
                 Text("Arriving to " + senderKey.currentStation + " in").italic()
                 ScrollView{

@@ -8,83 +8,74 @@
 import Foundation
 import SwiftUI
 
-struct ListData: Identifiable {
-    var transportType: String
-    var destination: String
-    var currentStation: String
-    var sched: [String]
-    var id = UUID()
+struct ListData {
+    let transportType: String
+    let destination: String
+    let currentStation: String
+    let sched: [String]
     
-    func getColor() -> Color {
-        var thisColor: Color
-        switch(self.transportType){
+    var color: Color {
+        switch(transportType) {
         case("GL"):
-            thisColor = Color("GLGreen")
+            return Color("GLGreen")
         case("BL"):
-            thisColor = Color("BLBlue")
+            return Color("BLBlue")
         case("RL"):
-            thisColor = Color("RLRed")
+            return Color("RLRed")
         case("OL"):
-            thisColor = Color("OLOrange")
+            return Color("OLOrange")
         default:
-            thisColor = Color("BusYellow")
+            return Color("BusYellow")
         }
-        return thisColor
     }
     
-    func getColor2() -> Color {
-        var thisColor: Color
-        switch(self.transportType){
+    var color2: Color {
+        switch(transportType) {
         case("GL"):
-            thisColor = Color("GLGreen2")
+            return Color("GLGreen2")
         case("BL"):
-            thisColor = Color("BLBlue2")
+            return Color("BLBlue2")
         case("RL"):
-            thisColor = Color("RLRed2")
+            return Color("RLRed2")
         case("OL"):
-            thisColor = Color("OLOrange2")
+            return Color("OLOrange2")
         default:
-            thisColor = Color("BusYellow2")
+            return Color("BusYellow2")
         }
-        return thisColor
     }
     
-    func getFullName() -> String {
-        var thisName: String
-        switch(self.transportType){
+    var fullName: String {
+        switch(transportType) {
         case("GL"):
-            thisName = "Green Line"
+            return "Green Line"
         case("BL"):
-            thisName = "Blue Line"
+            return "Blue Line"
         case("RL"):
-            thisName = "Red Line"
+            return "Red Line"
         case("OL"):
-            thisName = "Orange Line"
+            return "Orange Line"
         default:
-            thisName = self.transportType + " Bus"
+            return transportType + " Bus"
         }
-        return thisName
     }
     
-    func getImage() -> String {
-        var thisImage: String
-        switch(self.transportType){
+    var image: String {
+        switch(transportType) {
         case("GL"):
-            thisImage = "gl4"
+            return "gl4"
         case("BL"):
-            thisImage = "bl4"
+            return "bl4"
         case("RL"):
-            thisImage = "rl4"
+            return "rl4"
         case("OL"):
-            thisImage = "ol4"
+            return "ol4"
         default:
-            thisImage = "bus4"
+            return "bus4"
         }
-        return thisImage
     }
     
-    func getBound() -> String {
-        return("Outbound")
+    var direction: String {
+        return "Outbound"
     }
 }
 
@@ -208,7 +199,5 @@ var tList = [
         ]
     ),
 ]
-
-
 
 
