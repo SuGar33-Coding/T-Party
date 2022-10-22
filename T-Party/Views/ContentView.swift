@@ -11,20 +11,6 @@ struct ContentView: View {
     @State var trains = [Train]()
 
     var body: some View {
-//        NavigationView {
-//            VStack {
-//                NavigationLink(destination: OptionsView()){
-//                    Text("Go to options view.")
-//                }
-//                .navigationTitle("")
-//                .navigationBarHidden(true)
-//            }
-//        }
-//        .onAppear() {
-//            Api().loadData { (trains) in
-//                self.trains = trains
-//            }
-//        }
         TabView {
             OptionsView()
                 .tabItem {
@@ -34,6 +20,14 @@ struct ContentView: View {
                 .tabItem {
                     Label("Nearby", systemImage: "location")
                 }
+        }
+        .onAppear {
+            Task {
+                let thing = try! ScheduleFetcher(stopName: "hi")
+                try! await thing.update();
+                print("Outer data: ==========")
+                print(thing.scheduleData)
+            }
         }
     }
 }

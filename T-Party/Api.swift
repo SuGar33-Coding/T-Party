@@ -6,10 +6,15 @@
 //
 import Foundation
 import JSONAPI
+import SwiftUI
 
 typealias Resource<Description: JSONAPI.ResourceObjectDescription> = JSONAPI.ResourceObject<Description, NoMetadata, NoLinks, String>
 typealias BatchDocument<Resource: ResourceObjectType> = JSONAPI.Document<ManyResourceBody<Resource>, NoMetadata, NoLinks, NoIncludes, NoAPIDescription, UnknownJSONAPIError>
 
+enum ApiError: Error {
+    case urlError
+    case badRequest
+}
 
 class Api : ObservableObject{
     @Published var trains = [Train]()
@@ -34,4 +39,51 @@ class Api : ObservableObject{
         }.resume()
         
     }
+}
+
+struct Schedule: Codable {
+    var arrivalTime: String
+    var departureTime: String
+    var directionId: Int
+    var type: String
+    var id: String
+    struct stop: Codable {
+        var name: String
+        var type: String
+        var id: String
+    }
+}
+
+class ScheduleFetcher: ObservableObject {
+    @Published var scheduleData: Schedule
+    private let url: URL
+    var color = Color("GLGreen")
+    var color2 = Color("GLGreen2")
+    var fullName = "Green Line"
+    var direction = "Outbound"
+    var image: String = "gl4"
+    
+    init(stopName: String)
+    throws {
+        let urlString = "http://192.168.0.232:3000/schedules/hii"
+        guard let urlVal = URL(string: urlString) else {
+            throw ApiError.urlError
+        }
+        self.url = urlVal
+        self.scheduleData = Schedule(arrivalTime: "", departureTime: "", directionId: 0, type: "", id: "")
+    }
+    
+    func update() async
+    throws {
+        let (data, response) = try await URLSession.shared.data(for: URLRequest(url: self.url))
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.badRequest }
+
+        Task { @MainActor in
+            self.scheduleData = try JSONDecoder().decode(Schedule.self, from: data)
+            print("Schdule data: ============")
+            print(scheduleData)
+        }
+
+    }
+    
 }
