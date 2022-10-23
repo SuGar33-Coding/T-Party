@@ -54,9 +54,10 @@ struct Schedule: Codable {
     }
 }
 
-@MainActor class ScheduleFetcher: ObservableObject {
+@MainActor class LiveSchedule: ObservableObject {
     @Published var scheduleData: [Schedule]
-    @Published var arrivalDate: Date
+    @Published var arrivalDates: [Date]
+    @Published var oneArrivalDate: Date
     private let url: URL
     var color = Color("GLGreen")
     var color2 = Color("GLGreen2")
@@ -64,29 +65,43 @@ struct Schedule: Codable {
     var direction = "Outbound"
     var image: String = "gl4"
     
-    init(stopName: String)
+    init(stopId: String)
     throws {
-        let urlString = "http://192.168.0.232:3000/schedules/\(stopName)"
+        let urlString = "http://192.168.0.232:3000/schedules/\(stopId)"
         guard let urlVal = URL(string: urlString) else {
             throw ApiError.urlError
         }
         self.url = urlVal
         self.scheduleData = [Schedule(arrivalTime: "00:00:00", departureTime: "59:59:59", directionId: 0, type: "Train", id: "-1")]
-        self.arrivalDate = Date()
+        self.arrivalDates = [Date()]
+        self.oneArrivalDate = Date()
     }
     
     func update() async
     throws {
         let (data, response) = try await URLSession.shared.data(for: URLRequest(url: self.url))
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.badRequest }
-
-        self.scheduleData = try JSONDecoder().decode([Schedule].self, from: data)
         
+        self.scheduleData = try JSONDecoder().decode([Schedule].self, from: data)
+        //        self.scheduleData.forEach { schedule in
+        //            let dateFormatter = DateFormatter()
+        //            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        //            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        //            self.arrivalDate = dateFormatter.date(from: schedule.arrivalTime)!
+        //        }
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        self.arrivalDate = dateFormatter.date(from: self.scheduleData[0].arrivalTime)!
-
+        let arrivalDate = dateFormatter.date(from: self.scheduleData[0].arrivalTime)!
+        self.oneArrivalDate = arrivalDate
+        self.arrivalDates = []
+        self.scheduleData.forEach { schedule in
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            let arrivalDate = dateFormatter.date(from: schedule.arrivalTime)!
+            self.arrivalDates.append(arrivalDate)
+        }
     }
     
 }

@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct StopItemView: View {
-    @ObservedObject var conductor: ScheduleFetcher
+    @ObservedObject var conductor: LiveSchedule
     
     
     init() {
-        self.conductor = try! ScheduleFetcher(stopName: "70150")
+        self.conductor = try! LiveSchedule(stopId: "70146")
     }
     
     var body: some View {
@@ -31,7 +31,7 @@ struct StopItemView: View {
                 try! await self.conductor.update()
             }
             VStack{
-                Text(conductor.arrivalDate.formatted(Date.RelativeFormatStyle()))
+                Text(conductor.oneArrivalDate.formatted(Date.RelativeFormatStyle()))
                     .font(.system(size:35))
                     .fontWeight(.bold)
             }
