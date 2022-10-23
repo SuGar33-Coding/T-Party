@@ -54,8 +54,9 @@ struct Schedule: Codable {
     }
 }
 
-class ScheduleFetcher: ObservableObject {
+@MainActor class ScheduleFetcher: ObservableObject {
     @Published var scheduleData: [Schedule]
+    @Published var arrivalDate: Date
     private let url: URL
     var color = Color("GLGreen")
     var color2 = Color("GLGreen2")
@@ -70,7 +71,8 @@ class ScheduleFetcher: ObservableObject {
             throw ApiError.urlError
         }
         self.url = urlVal
-        self.scheduleData = [Schedule(arrivalTime: "", departureTime: "", directionId: 0, type: "", id: "")]
+        self.scheduleData = [Schedule(arrivalTime: "00:00:00", departureTime: "59:59:59", directionId: 0, type: "Train", id: "-1")]
+        self.arrivalDate = Date()
     }
     
     func update() async
@@ -78,11 +80,12 @@ class ScheduleFetcher: ObservableObject {
         let (data, response) = try await URLSession.shared.data(for: URLRequest(url: self.url))
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.badRequest }
 
-        
         self.scheduleData = try JSONDecoder().decode([Schedule].self, from: data)
-        print("Schdule data: ============")
-        print(scheduleData)
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        self.arrivalDate = dateFormatter.date(from: self.scheduleData[0].arrivalTime)!
 
     }
     

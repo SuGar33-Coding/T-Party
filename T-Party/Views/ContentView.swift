@@ -21,14 +21,6 @@ struct ContentView: View {
                     Label("Nearby", systemImage: "location")
                 }
         }
-        .onAppear {
-            Task.detached {
-                let thing = try! ScheduleFetcher(stopName: "70150")
-                try! await thing.update();
-                print("Outer data: ==========")
-                print(thing.scheduleData)
-            }
-        }
     }
 }
 
