@@ -22,8 +22,8 @@ struct ContentView: View {
                 }
         }
         .onAppear {
-            Task {
-                let thing = try! ScheduleFetcher(stopName: "hi")
+            Task.detached {
+                let thing = try! ScheduleFetcher(stopName: "70150")
                 try! await thing.update();
                 print("Outer data: ==========")
                 print(thing.scheduleData)

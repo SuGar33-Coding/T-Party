@@ -55,7 +55,7 @@ struct Schedule: Codable {
 }
 
 class ScheduleFetcher: ObservableObject {
-    @Published var scheduleData: Schedule
+    @Published var scheduleData: [Schedule]
     private let url: URL
     var color = Color("GLGreen")
     var color2 = Color("GLGreen2")
@@ -65,12 +65,12 @@ class ScheduleFetcher: ObservableObject {
     
     init(stopName: String)
     throws {
-        let urlString = "http://192.168.0.232:3000/schedules/hii"
+        let urlString = "http://192.168.0.232:3000/schedules/\(stopName)"
         guard let urlVal = URL(string: urlString) else {
             throw ApiError.urlError
         }
         self.url = urlVal
-        self.scheduleData = Schedule(arrivalTime: "", departureTime: "", directionId: 0, type: "", id: "")
+        self.scheduleData = [Schedule(arrivalTime: "", departureTime: "", directionId: 0, type: "", id: "")]
     }
     
     func update() async
@@ -78,11 +78,11 @@ class ScheduleFetcher: ObservableObject {
         let (data, response) = try await URLSession.shared.data(for: URLRequest(url: self.url))
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.badRequest }
 
-        Task { @MainActor in
-            self.scheduleData = try JSONDecoder().decode(Schedule.self, from: data)
-            print("Schdule data: ============")
-            print(scheduleData)
-        }
+        
+        self.scheduleData = try JSONDecoder().decode([Schedule].self, from: data)
+        print("Schdule data: ============")
+        print(scheduleData)
+        
 
     }
     
