@@ -67,7 +67,7 @@ struct Schedule: Codable {
     
     init(stopId: String)
     throws {
-        let urlString = "http://192.168.0.232:3000/schedules/\(stopId)"
+        let urlString = "http://t-server.cap.dabe.tech/schedules/\(stopId)"
         guard let urlVal = URL(string: urlString) else {
             throw ApiError.urlError
         }
