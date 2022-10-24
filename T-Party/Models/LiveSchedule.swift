@@ -1,15 +1,8 @@
-//
-//  Schedule.swift
-//  T-Party
-//
-//  Created by Gabriel Klavans on 10/23/22.
-//
-
 import Foundation
 import SwiftUI
 
 @MainActor class LiveSchedule: ObservableObject {
-    public struct Stop: Codable {
+    struct Stop: Codable {
         init() {
             self.name = ""
             self.type = ""
@@ -46,8 +39,7 @@ import SwiftUI
     
     init(stopId: String)
     throws {
-        let urlString = "https://t-server.cap.dabe.tech/schedules/\(stopId)"
-        //        let urlString = "http://localhost:3000/schedules/\(stopId)"
+        let urlString = "\(serverDomain)/schedules/\(stopId)"
         
         guard let urlVal = URL(string: urlString) else {
             throw ApiError.urlError
