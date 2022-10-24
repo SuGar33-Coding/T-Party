@@ -31,11 +31,12 @@ struct StopItemView: View {
                 try! await self.conductor.update()
             }
             VStack{
-                Text(conductor.oneArrivalDate.formatted(Date.RelativeFormatStyle()))
+                Text(conductor.scheduleData[0].getArrivalDate().formatted(Date.RelativeFormatStyle()))
                     .font(.system(size:35))
                     .fontWeight(.bold)
             }
         }
+        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
 

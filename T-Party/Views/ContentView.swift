@@ -8,8 +8,6 @@ import SwiftUI
 import CoreLocation
 
 struct ContentView: View {
-    @State var trains = [Train]()
-
     var body: some View {
         TabView {
             OptionsView()

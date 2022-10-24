@@ -11,7 +11,6 @@ struct OptionsView: View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 40) {
-                    StopItemView()
                     ForEach(tList, id: \.transportType) { option in
                         NavigationLink(
                             destination: ScheduleView(senderKey: option)
