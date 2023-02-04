@@ -16,18 +16,15 @@ struct ContentView: View {
     var manager = LocationManager()
     
     var body: some View {
-        VStack{
-            TabView {
-                
-                OptionsView()
-                    .tabItem {
-                        Label("Home", systemImage: "house")
-                    }
-                NearbyView()
-                    .tabItem {
-                        Label("Nearby", systemImage: "location")
-                    }
-            }
+        TabView {
+            ScheduleListView()
+                .tabItem {
+                    Label("Home", systemImage: "house")
+                }
+            NearbyView()
+                .tabItem {
+                    Label("Nearby", systemImage: "location")
+                }
         }
     }
 }

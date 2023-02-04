@@ -10,16 +10,17 @@
 		001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */; };
 		001DEFF328F3DBDB00B9A6EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */; };
 		001DEFF628F3DBDB00B9A6EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */; };
+		0075407829185BD300D49C55 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075407729185BD300D49C55 /* Util.swift */; };
 		00964F1F28F9E905006523CF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F1E28F9E905006523CF /* Api.swift */; };
 		00964F2228F9EE1C006523CF /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 00964F2128F9EE1C006523CF /* JSONAPI */; };
 		00964F242900FD80006523CF /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F232900FD80006523CF /* NearbyView.swift */; };
 		00964F262904ED38006523CF /* StopItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F252904ED38006523CF /* StopItemView.swift */; };
 		00964F2A2906419E006523CF /* LiveSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F292906419E006523CF /* LiveSchedule.swift */; };
 		00B5F41F28F9E605007F5E46 /* SingleListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */; };
-		00B5F42028F9E605007F5E46 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41D28F9E605007F5E46 /* ScheduleView.swift */; };
-		00B5F42128F9E605007F5E46 /* OptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41E28F9E605007F5E46 /* OptionsView.swift */; };
+		00B5F42028F9E605007F5E46 /* ScheduleDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41D28F9E605007F5E46 /* ScheduleDetailView.swift */; };
+		00B5F42128F9E605007F5E46 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F41E28F9E605007F5E46 /* ScheduleListView.swift */; };
 		00B5F42328F9E677007F5E46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5F42228F9E677007F5E46 /* ContentView.swift */; };
-		1366811B28FA370600511925 /* SingleScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366811A28FA370600511925 /* SingleScheduleItemView.swift */; };
+		1366811B28FA370600511925 /* ScheduleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366811A28FA370600511925 /* ScheduleItemView.swift */; };
 		1366811D2902055C00511925 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366811C2902055C00511925 /* LocationManager.swift */; };
 		1366811F2902067500511925 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366811E2902067500511925 /* MapView.swift */; };
 		13668121290207A100511925 /* Stoptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13668120290207A100511925 /* Stoptions.swift */; };
@@ -31,15 +32,16 @@
 		001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TPartyApp.swift; sourceTree = "<group>"; };
 		001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		001DEFF528F3DBDB00B9A6EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0075407729185BD300D49C55 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		00964F1E28F9E905006523CF /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		00964F232900FD80006523CF /* NearbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
 		00964F252904ED38006523CF /* StopItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopItemView.swift; sourceTree = "<group>"; };
 		00964F292906419E006523CF /* LiveSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveSchedule.swift; sourceTree = "<group>"; };
 		00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleListItemView.swift; sourceTree = "<group>"; };
-		00B5F41D28F9E605007F5E46 /* ScheduleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
-		00B5F41E28F9E605007F5E46 /* OptionsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsView.swift; sourceTree = "<group>"; };
+		00B5F41D28F9E605007F5E46 /* ScheduleDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDetailView.swift; sourceTree = "<group>"; };
+		00B5F41E28F9E605007F5E46 /* ScheduleListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
 		00B5F42228F9E677007F5E46 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		1366811A28FA370600511925 /* SingleScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleScheduleItemView.swift; sourceTree = "<group>"; };
+		1366811A28FA370600511925 /* ScheduleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItemView.swift; sourceTree = "<group>"; };
 		1366811C2902055C00511925 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1366811E2902067500511925 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		13668120290207A100511925 /* Stoptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stoptions.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				001DEFF228F3DBDB00B9A6EA /* Assets.xcassets */,
 				001DEFF428F3DBDB00B9A6EA /* Preview Content */,
 				00964F1E28F9E905006523CF /* Api.swift */,
+				0075407729185BD300D49C55 /* Util.swift */,
 			);
 			path = "T-Party";
 			sourceTree = "<group>";
@@ -112,10 +115,10 @@
 			isa = PBXGroup;
 			children = (
 				00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */,
-				1366811A28FA370600511925 /* SingleScheduleItemView.swift */,
-				00B5F41D28F9E605007F5E46 /* ScheduleView.swift */,
+				1366811A28FA370600511925 /* ScheduleItemView.swift */,
+				00B5F41D28F9E605007F5E46 /* ScheduleDetailView.swift */,
 				1366811E2902067500511925 /* MapView.swift */,
-				00B5F41E28F9E605007F5E46 /* OptionsView.swift */,
+				00B5F41E28F9E605007F5E46 /* ScheduleListView.swift */,
 				00B5F42228F9E677007F5E46 /* ContentView.swift */,
 				00964F232900FD80006523CF /* NearbyView.swift */,
 				00964F252904ED38006523CF /* StopItemView.swift */,
@@ -200,14 +203,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				00964F2A2906419E006523CF /* LiveSchedule.swift in Sources */,
-				00B5F42028F9E605007F5E46 /* ScheduleView.swift in Sources */,
+				00B5F42028F9E605007F5E46 /* ScheduleDetailView.swift in Sources */,
 				1366811F2902067500511925 /* MapView.swift in Sources */,
 				00964F242900FD80006523CF /* NearbyView.swift in Sources */,
 				1366811D2902055C00511925 /* LocationManager.swift in Sources */,
 				00B5F42328F9E677007F5E46 /* ContentView.swift in Sources */,
 				001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */,
-				1366811B28FA370600511925 /* SingleScheduleItemView.swift in Sources */,
-				00B5F42128F9E605007F5E46 /* OptionsView.swift in Sources */,
+				0075407829185BD300D49C55 /* Util.swift in Sources */,
+				1366811B28FA370600511925 /* ScheduleItemView.swift in Sources */,
+				00B5F42128F9E605007F5E46 /* ScheduleListView.swift in Sources */,
 				1386BFCC28F7948500063C51 /* ListData.swift in Sources */,
 				00964F1F28F9E905006523CF /* Api.swift in Sources */,
 				00964F262904ED38006523CF /* StopItemView.swift in Sources */,

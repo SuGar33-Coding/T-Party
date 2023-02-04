@@ -45,7 +45,7 @@ struct NearbyView: View {
                         if stationChosen == false {
                             ForEach(tList, id: \.id) { option in
                                 NavigationLink(
-                                    destination: ScheduleView(senderKey: option)
+                                    destination: ScheduleDetailView(senderKey: option)
                                         .navigationTitle(option.currentStation)
                                 ) {
                                     SingleListItemView(thisOne: option)
@@ -54,7 +54,7 @@ struct NearbyView: View {
                         }else{
                             ForEach(specList, id: \.id) { option in
                                 NavigationLink(
-                                    destination: ScheduleView(senderKey: option)
+                                    destination: ScheduleDetailView(senderKey: option)
                                         .navigationTitle(option.currentStation)
                                 ) {
                                     SingleListItemView(thisOne: option)

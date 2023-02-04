@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 import MapKit
 
-struct OptionsView: View {
+struct ScheduleListView: View {
     
     @State var schedulePressed = false
     @State var isActive = false
@@ -13,7 +13,7 @@ struct OptionsView: View {
                 VStack(alignment: .leading, spacing: 40) {
                     ForEach(tList, id: \.transportType) { option in
                         NavigationLink(
-                            destination: ScheduleView(senderKey: option)
+                            destination: ScheduleDetailView(senderKey: option)
                                 .navigationTitle(option.fullName)
                         ) {
                             SingleListItemView(thisOne: option)
@@ -28,9 +28,9 @@ struct OptionsView: View {
     }
 }
 
-struct OptionsView_Previews: PreviewProvider {
+struct ScheduleListView_Previews: PreviewProvider {
     static var previews: some View {
-        OptionsView()
+        ScheduleListView()
     }
 }
 

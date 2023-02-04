@@ -11,19 +11,19 @@ struct StopItemView: View {
     var body: some View {
         HStack(spacing: 100) {
             VStack{
-                Image(conductor.image)
+                Image(conductor.staticData.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 100, height: 100, alignment: .center)
                     .cornerRadius(20)
                     .overlay(
-                        Text(conductor.fullName)
+                        Text(conductor.staticData.fullName)
                             .font(.system(size:18))
-                            .foregroundColor(conductor.color)
+                            .foregroundColor(conductor.staticData.color)
                             .fontWeight(.bold)
                             .padding(5),
                         alignment: .bottom)
-                Text(conductor.direction)
+                Text(conductor.staticData.direction)
                     .font(.system(size:16))
                     .fontWeight(.bold)
                 }

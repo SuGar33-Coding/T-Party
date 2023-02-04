@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ScheduleView: View {
+struct ScheduleDetailView: View {
     
     var senderKey: ListData
     
@@ -28,15 +28,15 @@ struct ScheduleView: View {
                 ScrollView{
                     let schedSize = senderKey.sched.count
                     ForEach(0..<schedSize, id: \.self) { pos in
-                        SingleScheduleItemView(info: senderKey, position: pos)
+                        ScheduleItemView(info: senderKey, position: pos)
                 }
             }
         }
     }
 }
                             }
-    struct ScheduleView_Previews: PreviewProvider {
+    struct ScheduleDetailView_Previews: PreviewProvider {
         static var previews: some View {
-            ScheduleView(senderKey: tList[1])
+            ScheduleDetailView(senderKey: tList[1])
         }
     }

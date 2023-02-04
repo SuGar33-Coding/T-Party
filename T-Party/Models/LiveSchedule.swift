@@ -22,20 +22,21 @@ import SwiftUI
         var stop: Stop
         
         func getArrivalDate() -> Date {
-            let dateFormatter = DateFormatter()
-            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-            return dateFormatter.date(from: self.arrivalTime) ?? Date()
+            return isoStringToDate(dateString: self.arrivalTime)
         }
+    }
+    
+    struct StaticData {
+        var color = Color("GLGreen")
+        var color2 = Color("GLGreen2")
+        var fullName = "Green Line"
+        var direction = "Outbound"
+        var image: String = "gl4"
     }
     
     @Published var scheduleData: [Schedule]
     private let url: URL
-    var color = Color("GLGreen")
-    var color2 = Color("GLGreen2")
-    var fullName = "Green Line"
-    var direction = "Outbound"
-    var image: String = "gl4"
+    var staticData: StaticData
     
     init(stopId: String)
     throws {
@@ -45,7 +46,15 @@ import SwiftUI
             throw ApiError.urlError
         }
         self.url = urlVal
-        self.scheduleData = [Schedule(arrivalTime: "00:00:00", departureTime: "59:59:59", directionId: 0, type: "Train", id: "-1", stop: Stop())]
+        self.scheduleData = [Schedule(arrivalTime: dateToIsoString(date: Date()), departureTime: dateToIsoString(date: Date()), directionId: 0, type: "Train", id: "-1", stop: Stop())]
+        self.staticData = StaticData()
+    }
+    
+    convenience init(stopId: String, staticData: StaticData)
+    throws {
+        try self.init(stopId: stopId)
+        self.staticData = staticData
+
     }
     
     func update() async

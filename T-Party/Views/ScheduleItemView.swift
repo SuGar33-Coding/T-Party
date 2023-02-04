@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SingleScheduleItemView: View {
+struct ScheduleItemView: View {
     
     var info: ListData
     var position: Int
@@ -26,10 +26,9 @@ struct SingleScheduleItemView: View {
         }
     }
 }
-struct SingleScheduleItemView_Previews: PreviewProvider {
+struct ScheduleItemView_Previews: PreviewProvider {
     static var previews: some View {
-        SingleScheduleItemView(info: tList[1], position: 0)
-            
+        ScheduleItemView(info: tList[1], position: 0)
     }
 }
 
