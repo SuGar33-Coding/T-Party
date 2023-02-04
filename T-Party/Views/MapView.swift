@@ -21,13 +21,15 @@ struct MapView: View {
     )
     
     var body: some View {
-        Map(coordinateRegion: $userLoc, annotationItems: stoptions) { stoption in
-            MapAnnotation(coordinate: stoption.coords) {
-                Circle()
-                    .fill(Color("GLGreen"))
-                    .onTapGesture {
-                        print("Tapped on \(stoption.stopName)")
-                    }
+        HStack {
+            Map(coordinateRegion: $userLoc, annotationItems: stoptions) { stoption in
+                MapAnnotation(coordinate: stoption.coords) {
+                    Circle()
+                        .fill(Color("GLGreen"))
+                        .onTapGesture {
+                            print("Tapped on \(stoption.stopName)")
+                        }
+                }
             }
         }
     }

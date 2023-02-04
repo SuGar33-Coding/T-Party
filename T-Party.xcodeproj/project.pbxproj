@@ -44,6 +44,7 @@
 		1366811E2902067500511925 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		13668120290207A100511925 /* Stoptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stoptions.swift; sourceTree = "<group>"; };
 		1386BFCB28F7948500063C51 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
+		FD82743B2974D07F00537E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +78,7 @@
 		001DEFED28F3DBD800B9A6EA /* T-Party */ = {
 			isa = PBXGroup;
 			children = (
+				FD82743B2974D07F00537E3B /* Info.plist */,
 				00B5F41B28F9E605007F5E46 /* Views */,
 				00B5F40C28F7BB62007F5E46 /* Models */,
 				001DEFEE28F3DBD800B9A6EA /* TPartyApp.swift */,
@@ -342,6 +344,10 @@
 				DEVELOPMENT_TEAM = GPQ9QH5YRX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "T-Party/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = lol;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "uwu let me see u pls";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -371,6 +377,10 @@
 				DEVELOPMENT_TEAM = GPQ9QH5YRX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "T-Party/Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = YES;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = lol;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "uwu let me see u pls";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

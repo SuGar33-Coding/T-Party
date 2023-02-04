@@ -17,7 +17,7 @@ struct SingleListItemView: View {
     
     init(thisOne: ListData) {
         self.transportType = thisOne.transportType
-        self.color = thisOne.color2
+        self.color = thisOne.color
         self.sched = thisOne.sched
         self.image = thisOne.image
         self.destination = thisOne.destination

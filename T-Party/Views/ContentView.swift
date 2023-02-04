@@ -7,25 +7,35 @@
 import SwiftUI
 import CoreLocation
 
+
+
+
 struct ContentView: View {
+    
+    @State var needToGetLoc = false
+    var manager = LocationManager()
+    
     var body: some View {
-        TabView {
-            OptionsView()
-                .tabItem {
-                    Label("Home", systemImage: "house")
-                }
-            NearbyView()
-                .tabItem {
-                    Label("Nearby", systemImage: "location")
-                }
+        VStack{
+            TabView {
+                
+                OptionsView()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+                NearbyView()
+                    .tabItem {
+                        Label("Nearby", systemImage: "location")
+                    }
+            }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
-
 
