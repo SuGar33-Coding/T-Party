@@ -2,7 +2,7 @@
 //  LocationManager.swift
 //  T-Party
 //
-//  Created by Emily Mallaber on 10/20/22.
+//  Created by Emily Mallaber on 2/4/23.
 //
 
 import Foundation
@@ -19,6 +19,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         manager.delegate = self
+        manager.startUpdatingLocation()
     }
     
     func requestLocation() {
@@ -26,10 +27,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.first?.coordinate
+        location = locations.last?.coordinate
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager ) {
         switch manager.authorizationStatus{
         case .authorizedWhenInUse:
             print("inuse")
@@ -45,31 +46,4 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             break
         }
     }
-    
-    struct LocationView: View {
-        @StateObject var locationManager = LocationManager()
-        
-        var body: some View {
-            VStack {
-                if let location = locationManager.location {
-                    Text("Your location: \(location.latitude), \(location.longitude)")
-                }
-                
-                LocationButton {
-                    locationManager.requestLocation()
-                }
-                .frame(height: 44)
-                .padding()
-            }
-        }
-    }
-    
-    struct StopItemView_Previews: PreviewProvider {
-        static var previews: some View {
-            LocationView()
-        }
-    }
-
 }
-
-
