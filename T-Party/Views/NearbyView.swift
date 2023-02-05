@@ -32,42 +32,40 @@ struct NearbyView: View {
                         } else {
                             Image(systemName: "line.3.horizontal.decrease.circle")
                         }
-                    }
-                    .padding()
+                    }.padding()
                 }
-                    ScrollView {
-                        VStack(alignment: .leading, spacing: 40){
-                            if stationChosen == false {
-                                ForEach(tList, id: \.id) { option in
-                                    NavigationLink(
-                                        destination: ScheduleDetailView(senderKey: option)
-                                            .navigationTitle(option.currentStation)
-                                    ) {
-                                        SingleListItemView(thisOne: option)
-                                    }
-                                }
-                            }else{
-                                ForEach(specList, id: \.id) { option in
-                                    NavigationLink(
-                                        destination: ScheduleDetailView(senderKey: option)
-                                            .navigationTitle(option.currentStation)
-                                    ) {
-                                        SingleListItemView(thisOne: option)
-                                    }
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 40){
+                        if stationChosen == false {
+                            ForEach(tList, id: \.id) { option in
+                                NavigationLink(
+                                    destination: ScheduleDetailView(schedule: option)
+                                        .navigationTitle(option.currentStation)
+                                ) {
+                                    SingleListItemView(thisOne: option)
                                 }
                             }
-                            
+                        }else{
+                            ForEach(specList, id: \.id) { option in
+                                NavigationLink(
+                                    destination: ScheduleDetailView(schedule: option)
+                                        .navigationTitle(option.currentStation)
+                                ) {
+                                    SingleListItemView(thisOne: option)
+                                }
+                            }
                         }
-                    }.navigationTitle("")
-                        .navigationBarHidden(true)
-                }
+                        
+                    }
+                }.navigationTitle("")
+                    .navigationBarHidden(true)
             }
         }
     }
-
-
-struct NearbyView_Previews: PreviewProvider {
-    static var previews: some View {
-        NearbyView()
-    }
 }
+
+    struct NearbyView_Previews: PreviewProvider {
+        static var previews: some View {
+            NearbyView()
+        }
+    }

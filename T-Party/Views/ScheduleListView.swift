@@ -13,7 +13,7 @@ struct ScheduleListView: View {
                 VStack(alignment: .leading, spacing: 40) {
                     ForEach(tList, id: \.transportType) { option in
                         NavigationLink(
-                            destination: ScheduleDetailView(senderKey: option)
+                            destination: ScheduleDetailView(schedule: option)
                                 .navigationTitle(option.fullName)
                         ) {
                             SingleListItemView(thisOne: option)

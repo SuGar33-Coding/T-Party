@@ -4,7 +4,7 @@ import Foundation
 
 struct Stop: Codable {
     var id: String
-    var latitude: Float
-    var longitude: Float
+    var latitude: Float?
+    var longitude: Float?
     var name: String
 }

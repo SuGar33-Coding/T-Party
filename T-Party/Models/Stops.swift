@@ -1,13 +1,26 @@
 import Foundation
 
 class Stops {
+    var urlString: String
     var stops: [Stop]
     
-    init() async
+    private init(urlString: String) {
+        self.urlString = urlString
+        self.stops = [Stop(id: "", latitude: 0, longitude: 0, name: "")]
+    }
+    
+    convenience init() {
+        self.init(urlString: "\(serverDomain)/stops/")
+    }
+    
+    convenience init(lat: Float, long: Float, radius: Float) async
     throws {
-        let urlString = "\(serverDomain)/stops"
-        
-        guard let urlVal = URL(string: urlString) else {
+        self.init(urlString: "\(serverDomain)/stops/within/\(lat)/\(long)/\(radius)")
+    }
+    
+    func update() async
+    throws {
+        guard let urlVal = URL(string: self.urlString) else {
             throw ApiError.urlError
         }
         let (data, response) = try await URLSession.shared.data(for: URLRequest(url: urlVal))
