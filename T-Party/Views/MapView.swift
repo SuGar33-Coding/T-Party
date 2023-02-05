@@ -10,19 +10,27 @@ import MapKit
 
 
 struct MapView: View {
+    @ObservedObject var usersLocation : LocationManager
+    var latitude: Double
+    var longitude: Double
+    @State var region : MKCoordinateRegion
     
-    @State private var userLoc = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 42.349190,
-            longitude: -71.104040),
-        span: MKCoordinateSpan(
-            latitudeDelta: 0.005,
-            longitudeDelta: 0.005)
-    )
+    init(manager : LocationManager) {
+        self.usersLocation = manager
+        let lat = manager.location?.latitude ?? 0
+        self.latitude = lat
+        let long = manager.location?.longitude ?? 0
+        self.longitude = long
+        let reg = MKCoordinateRegion(
+            center: CLLocationCoordinate2D(latitude: lat , longitude: long),
+            span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        )
+        self._region = State<MKCoordinateRegion>(initialValue: reg)
+    }
     
     var body: some View {
-        HStack {
-            Map(coordinateRegion: $userLoc, annotationItems: stoptions) { stoption in
+        VStack{
+            Map(coordinateRegion: $region, annotationItems: stoptions) { stoption in
                 MapAnnotation(coordinate: stoption.coords) {
                     Circle()
                         .fill(Color("GLGreen"))
@@ -32,12 +40,5 @@ struct MapView: View {
                 }
             }
         }
-    }
-}
-
-
-struct MapView_Previews: PreviewProvider {
-    static var previews: some View {
-        MapView()
     }
 }
