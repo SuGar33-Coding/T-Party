@@ -35,7 +35,7 @@ struct StopItemView: View {
                     .fontWeight(.bold)
             }
         }
-        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .padding(.all)
     }
 }
 

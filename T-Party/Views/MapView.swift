@@ -30,7 +30,7 @@ struct MapView: View {
     
     var body: some View {
         VStack{
-            Map(coordinateRegion: $region, annotationItems: stoptions) { stoption in
+            Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: stoptions) { stoption in
                 MapAnnotation(coordinate: stoption.coords) {
                     Circle()
                         .fill(Color("GLGreen"))

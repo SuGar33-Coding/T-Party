@@ -17,40 +17,54 @@ struct NearbyView: View {
     @State var stationChosen = false
     @State var station = "none yet"
     @State var specList = tList
+    @State var filterOn = false
     var body: some View {
         NavigationView {
             VStack {
                 Label("You're here...", systemImage: "location")
-                MapView(manager: locationManager)
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 40){
-                        if stationChosen == false {
-                            ForEach(tList, id: \.id) { option in
-                                NavigationLink(
-                                    destination: ScheduleDetailView(senderKey: option)
-                                        .navigationTitle(option.currentStation)
-                                ) {
-                                    SingleListItemView(thisOne: option)
-                                }
-                            }
-                        }else{
-                            ForEach(specList, id: \.id) { option in
-                                NavigationLink(
-                                    destination: ScheduleDetailView(senderKey: option)
-                                        .navigationTitle(option.currentStation)
-                                ) {
-                                    SingleListItemView(thisOne: option)
-                                }
-                            }
+                ZStack(alignment: .topTrailing) {
+                    MapView(manager: locationManager)
+                    Button() {
+                        filterOn.toggle()
+                    } label: {
+                        if filterOn {
+                            Image(systemName: "line.3.horizontal.decrease.circle.fill")
+                        } else {
+                            Image(systemName: "line.3.horizontal.decrease.circle")
                         }
-                        
                     }
-                }.navigationTitle("")
-                .navigationBarHidden(true)
+                    .padding()
+                }
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 40){
+                            if stationChosen == false {
+                                ForEach(tList, id: \.id) { option in
+                                    NavigationLink(
+                                        destination: ScheduleDetailView(senderKey: option)
+                                            .navigationTitle(option.currentStation)
+                                    ) {
+                                        SingleListItemView(thisOne: option)
+                                    }
+                                }
+                            }else{
+                                ForEach(specList, id: \.id) { option in
+                                    NavigationLink(
+                                        destination: ScheduleDetailView(senderKey: option)
+                                            .navigationTitle(option.currentStation)
+                                    ) {
+                                        SingleListItemView(thisOne: option)
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }.navigationTitle("")
+                        .navigationBarHidden(true)
+                }
             }
         }
     }
-}
+
 
 struct NearbyView_Previews: PreviewProvider {
     static var previews: some View {

@@ -29,14 +29,14 @@ struct ScheduleDetailView: View {
                     let schedSize = senderKey.sched.count
                     ForEach(0..<schedSize, id: \.self) { pos in
                         ScheduleItemView(info: senderKey, position: pos)
+                    }
                 }
             }
         }
     }
 }
-                            }
-    struct ScheduleDetailView_Previews: PreviewProvider {
-        static var previews: some View {
-            ScheduleDetailView(senderKey: tList[1])
-        }
+struct ScheduleDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        ScheduleDetailView(senderKey: tList[1])
     }
+}
