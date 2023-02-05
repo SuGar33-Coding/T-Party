@@ -6,8 +6,8 @@ struct ScheduleListView: View {
     
     @State var schedulePressed = false
     @State var isActive = false
-    @State var currSched = Stops()
-        
+    @State var currStops = Stops()
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -20,20 +20,20 @@ struct ScheduleListView: View {
                             SingleListItemView(thisOne: option)
                         }
                     }
+                }.task{
+                    try!await currStops.update()
                 }
                 
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.automatic)
-        }.task {
-            try!await currSched.update()
         }
     }
 }
 
-struct ScheduleListView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScheduleListView()
-    }
-}
+//struct ScheduleListView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScheduleListView(Stops())
+//    }
+//}
 

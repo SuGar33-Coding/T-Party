@@ -18,7 +18,7 @@ struct NearbyView: View {
     @State var station = "none yet"
     @State var specList = tList
     @State var filterOn = false
-    @State var currSched = Stops()
+    @State var currStops = Stops()
     
     var body: some View {
         NavigationView {
@@ -26,18 +26,6 @@ struct NearbyView: View {
                 Label("You're here...", systemImage: "location")
                 ZStack(alignment: .topTrailing) {
                     MapView(manager: locationManager)
-                    Button() {
-                        filterOn.toggle()
-                    } label: {
-                        if filterOn {
-                            Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                                .font(.system(size: 45))
-                        } else {
-                            Image(systemName: "line.3.horizontal.decrease.circle")
-                                .font(.system(size: 45))
-                        }
-                    }
-                    .padding()
                 }
                 ScrollView {
                     VStack(alignment: .leading, spacing: 40){
@@ -61,18 +49,18 @@ struct NearbyView: View {
                             }
                         }
                         
+                    }.task{
+                        try! await currStops.update()
                     }
                 }.navigationTitle("")
                     .navigationBarHidden(true)
             }
-        }.task {
-            try!await currSched.update()
         }
     }
 }
 
-    struct NearbyView_Previews: PreviewProvider {
-        static var previews: some View {
-            NearbyView()
-        }
-    }
+//    struct NearbyView_Previews: PreviewProvider {
+//        static var previews: some View {
+//            NearbyView()
+//        }
+//    }

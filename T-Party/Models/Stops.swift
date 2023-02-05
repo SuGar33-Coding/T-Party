@@ -6,7 +6,7 @@ class Stops {
     
     private init(urlString: String) {
         self.urlString = urlString
-        self.stops = [Stop(id: "", latitude: 0, longitude: 0, name: "")]
+        self.stops = [Stop(stopData: StopData(id: "", latitude: 0, longitude: 0, name: "", route_type: 0))]
     }
     
     convenience init() {
@@ -26,6 +26,15 @@ class Stops {
         let (data, response) = try await URLSession.shared.data(for: URLRequest(url: urlVal))
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.badRequest }
         
-        self.stops = try JSONDecoder().decode([Stop].self, from: data)
+        let stopDataList = try JSONDecoder().decode([StopData].self, from: data)
+        
+        var stopsMid: [Stop] = []
+        
+        for stopData in stopDataList {
+            if stopData.latitude != nil {
+                stopsMid.append(Stop(stopData: stopData))
+            }
+        }
+        self.stops = stopsMid
     }
 }

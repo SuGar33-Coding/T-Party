@@ -13,7 +13,7 @@ import CoreLocation
 struct ContentView: View {
     
     @State var needToGetLoc = false
-    @State var currSched = Stops()
+    @State var currStops = Stops()
     @StateObject var manager = LocationManager()
     
     var body: some View {
@@ -27,7 +27,8 @@ struct ContentView: View {
                     Label("Nearby", systemImage: "location")
             }
         } .task {
-            try!await currSched.update()
+            try!await currStops.update()
+            print("stop val:", currStops.stops[0].stopName)
         }
     }
 }
