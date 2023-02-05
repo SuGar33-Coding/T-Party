@@ -6,6 +6,7 @@ struct ScheduleListView: View {
     
     @State var schedulePressed = false
     @State var isActive = false
+    @State var currSched = Stops()
         
     var body: some View {
         NavigationView {
@@ -24,6 +25,8 @@ struct ScheduleListView: View {
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.automatic)
+        }.task {
+            try!await currSched.update()
         }
     }
 }

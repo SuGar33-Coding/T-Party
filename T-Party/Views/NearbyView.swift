@@ -18,6 +18,8 @@ struct NearbyView: View {
     @State var station = "none yet"
     @State var specList = tList
     @State var filterOn = false
+    @State var currSched = Stops()
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -29,10 +31,13 @@ struct NearbyView: View {
                     } label: {
                         if filterOn {
                             Image(systemName: "line.3.horizontal.decrease.circle.fill")
+                                .font(.system(size: 45))
                         } else {
                             Image(systemName: "line.3.horizontal.decrease.circle")
+                                .font(.system(size: 45))
                         }
-                    }.padding()
+                    }
+                    .padding()
                 }
                 ScrollView {
                     VStack(alignment: .leading, spacing: 40){
@@ -60,6 +65,8 @@ struct NearbyView: View {
                 }.navigationTitle("")
                     .navigationBarHidden(true)
             }
+        }.task {
+            try!await currSched.update()
         }
     }
 }
