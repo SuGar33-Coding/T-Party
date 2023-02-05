@@ -3,7 +3,6 @@ import SwiftUI
 struct StopItemView: View {
     @ObservedObject var conductor: LiveSchedule
     
-    
     init() {
         self.conductor = try! LiveSchedule(stopId: "70146")
     }
