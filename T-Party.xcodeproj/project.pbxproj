@@ -27,7 +27,7 @@
 		1366811F2902067500511925 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1366811E2902067500511925 /* MapView.swift */; };
 		13668121290207A100511925 /* Stoptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13668120290207A100511925 /* Stoptions.swift */; };
 		1386BFCC28F7948500063C51 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386BFCB28F7948500063C51 /* ListData.swift */; };
-		FD74E38229904FE00071D304 /* FilterOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD74E38129904FE00071D304 /* FilterOptionsView.swift */; };
+		FD38DD2429A13F8000B015B4 /* MapPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38DD2329A13F8000B015B4 /* MapPopUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,7 +51,7 @@
 		1366811E2902067500511925 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		13668120290207A100511925 /* Stoptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stoptions.swift; sourceTree = "<group>"; };
 		1386BFCB28F7948500063C51 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
-		FD74E38129904FE00071D304 /* FilterOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsView.swift; sourceTree = "<group>"; };
+		FD38DD2329A13F8000B015B4 /* MapPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPopUpView.swift; sourceTree = "<group>"; };
 		FD82743B2974D07F00537E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,8 +125,8 @@
 				00B5F41C28F9E605007F5E46 /* SingleListItemView.swift */,
 				1366811A28FA370600511925 /* ScheduleItemView.swift */,
 				00B5F41D28F9E605007F5E46 /* ScheduleDetailView.swift */,
+				FD38DD2329A13F8000B015B4 /* MapPopUpView.swift */,
 				1366811E2902067500511925 /* MapView.swift */,
-				FD74E38129904FE00071D304 /* FilterOptionsView.swift */,
 				00B5F41E28F9E605007F5E46 /* ScheduleListView.swift */,
 				00B5F42228F9E677007F5E46 /* ContentView.swift */,
 				00964F232900FD80006523CF /* NearbyView.swift */,
@@ -222,8 +222,8 @@
 				0075407829185BD300D49C55 /* Util.swift in Sources */,
 				1366811B28FA370600511925 /* ScheduleItemView.swift in Sources */,
 				00B5F42128F9E605007F5E46 /* ScheduleListView.swift in Sources */,
-				FD74E38229904FE00071D304 /* FilterOptionsView.swift in Sources */,
 				1386BFCC28F7948500063C51 /* ListData.swift in Sources */,
+				FD38DD2429A13F8000B015B4 /* MapPopUpView.swift in Sources */,
 				00964F1F28F9E905006523CF /* Api.swift in Sources */,
 				00964F262904ED38006523CF /* StopItemView.swift in Sources */,
 				13668121290207A100511925 /* Stoptions.swift in Sources */,
