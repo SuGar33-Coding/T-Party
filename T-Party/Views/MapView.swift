@@ -34,32 +34,35 @@ struct MapView: View {
         
         }
     var body: some View {
-        VStack{
-            ZStack(alignment:.topTrailing){
-                Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: currStops.stops) { item in
-                MapAnnotation(coordinate: item.coords) {
-                    Circle()
-                        .fill(Color("GLGreen"))
-                        .onTapGesture {
-                            print("Tapped on \(item.stopName)")
+        ZStack{
+            VStack{
+                ZStack(alignment:.topTrailing){
+                    Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: currStops.stops) { item in
+                        MapAnnotation(coordinate: item.coords) {
+                            Circle()
+                                .fill(Color("GLGreen"))
+                                .onTapGesture {
+                                    print("Tapped on \(item.stopName)")
+                                }
                         }
                     }
-                }
-                Button() {
-                    filterOn.toggle()
-                    showFilterOptions.toggle()
-                } label: {
-                    if filterOn {
-                        Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                            .font(.system(size: 45))
-                    } else {
-                        Image(systemName: "line.3.horizontal.decrease.circle")
-                            .font(.system(size: 45))
+                    Button() {
+                        filterOn.toggle()
+                        showFilterOptions.toggle()
+                    } label: {
+                        if filterOn {
+                            Image(systemName: "line.3.horizontal.decrease.circle.fill")
+                                .font(.system(size: 45))
+                        } else {
+                            Image(systemName: "line.3.horizontal.decrease.circle")
+                                .font(.system(size: 45))
+                        }
                     }
+                    .padding()
                 }
-                .padding()
             }
-        }.task{
+            MapPopUpView(trainChecked: showT, busChecked: showBus, showFilterOptions: $showFilterOptions)
+        } .task{
             try!await currStops.update()
         }
     }
