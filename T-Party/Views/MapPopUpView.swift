@@ -12,32 +12,26 @@ struct MapPopUpView: View {
     @Binding var trainChecked: Bool
     @Binding var busChecked: Bool
     @Binding var showFilterOptions: Bool
+    @Binding var currAnnotation: AnnotationList
     
     var body: some View {
         if showFilterOptions{
             ZStack{
                 Color.white
                     .border(.black)
-                VStack(alignment: .trailing){
-                    Button() {
-                        showFilterOptions.toggle()
-                    } label: {
-                        Image(systemName: "xmark.app")
-                            .font(.system(size: 25))
-                    }.padding()
                     VStack{
                         HStack {
-                            CheckBoxView(checked: $trainChecked)
+                            CheckBoxView(checked: $trainChecked, currAnnotations: $currAnnotation, showT: $trainChecked, showBus: $busChecked)
                             Text("T Stops")
                         }
                         HStack{
-                            CheckBoxView(checked: $busChecked)
+                            CheckBoxView(checked: $busChecked, currAnnotations: $currAnnotation, showT: $trainChecked, showBus: $busChecked)
                             Text("Bus Stops")
                         }
                         
                     }
                     .frame(width: 200, height: 100, alignment: .center)
-                }
+                
             }
             .frame(width: 200, height: 100, alignment: .center)
         }
@@ -52,12 +46,15 @@ struct MapPopUpView: View {
 
 struct CheckBoxView: View {
     @Binding var checked: Bool
-
+    @Binding var currAnnotations: AnnotationList
+    @Binding var showT: Bool
+    @Binding var showBus: Bool
     var body: some View {
         Image(systemName: checked ? "checkmark.square.fill" : "square")
             .foregroundColor(checked ? Color(UIColor.black) : Color.secondary)
             .onTapGesture {
                 self.checked.toggle()
+                currAnnotations.resetAnnotations(showT: showT, showBus: showBus)
             }
     }
 }
