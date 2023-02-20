@@ -29,6 +29,7 @@
 		1386BFCC28F7948500063C51 /* ListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1386BFCB28F7948500063C51 /* ListData.swift */; };
 		FD0F764B29A2FF3900AC5FC6 /* AnnotationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F764A29A2FF3900AC5FC6 /* AnnotationList.swift */; };
 		FD38DD2429A13F8000B015B4 /* MapPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD38DD2329A13F8000B015B4 /* MapPopUpView.swift */; };
+		FD3900AF29A3286800D9DA6F /* StoptionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3900AE29A3286800D9DA6F /* StoptionDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		1386BFCB28F7948500063C51 /* ListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListData.swift; sourceTree = "<group>"; };
 		FD0F764A29A2FF3900AC5FC6 /* AnnotationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationList.swift; sourceTree = "<group>"; };
 		FD38DD2329A13F8000B015B4 /* MapPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPopUpView.swift; sourceTree = "<group>"; };
+		FD3900AE29A3286800D9DA6F /* StoptionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoptionDetailView.swift; sourceTree = "<group>"; };
 		FD82743B2974D07F00537E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				00B5F41D28F9E605007F5E46 /* ScheduleDetailView.swift */,
 				FD38DD2329A13F8000B015B4 /* MapPopUpView.swift */,
 				1366811E2902067500511925 /* MapView.swift */,
+				FD3900AE29A3286800D9DA6F /* StoptionDetailView.swift */,
 				00B5F41E28F9E605007F5E46 /* ScheduleListView.swift */,
 				00B5F42228F9E677007F5E46 /* ContentView.swift */,
 				00964F232900FD80006523CF /* NearbyView.swift */,
@@ -223,6 +226,7 @@
 				00B5F42328F9E677007F5E46 /* ContentView.swift in Sources */,
 				001DEFEF28F3DBD800B9A6EA /* TPartyApp.swift in Sources */,
 				0075407829185BD300D49C55 /* Util.swift in Sources */,
+				FD3900AF29A3286800D9DA6F /* StoptionDetailView.swift in Sources */,
 				1366811B28FA370600511925 /* ScheduleItemView.swift in Sources */,
 				00B5F42128F9E605007F5E46 /* ScheduleListView.swift in Sources */,
 				1386BFCC28F7948500063C51 /* ListData.swift in Sources */,

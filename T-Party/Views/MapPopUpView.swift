@@ -19,21 +19,19 @@ struct MapPopUpView: View {
             ZStack{
                 Color.white
                     .border(.black)
-                    VStack{
+                VStack(alignment: .trailing){
                         HStack {
-                            CheckBoxView(checked: $trainChecked, currAnnotations: $currAnnotation, showT: $trainChecked, showBus: $busChecked)
                             Text("T Stops")
+                            CheckBoxView(checked: $trainChecked, currAnnotations: $currAnnotation, showT: $trainChecked, showBus: $busChecked)
                         }
                         HStack{
-                            CheckBoxView(checked: $busChecked, currAnnotations: $currAnnotation, showT: $trainChecked, showBus: $busChecked)
                             Text("Bus Stops")
+                            CheckBoxView(checked: $busChecked, currAnnotations: $currAnnotation, showT: $trainChecked, showBus: $busChecked)
                         }
                         
                     }
-                    .frame(width: 200, height: 100, alignment: .center)
-                
             }
-            .frame(width: 200, height: 100, alignment: .center)
+            .frame(width: 150, height: 100, alignment: .bottomTrailing)
         }
     }
 

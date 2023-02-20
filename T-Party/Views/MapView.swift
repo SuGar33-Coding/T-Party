@@ -35,8 +35,6 @@ struct MapView: View {
         
     }
     var body: some View {
-        ZStack{
-            VStack{
                 ZStack(alignment:.topTrailing){
                     Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: currAnnotation.visibleAnnotations) { item in
                         MapAnnotation(coordinate: item.coords) {
@@ -58,6 +56,7 @@ struct MapView: View {
                             }
                         }
                     }
+                    MapPopUpView(trainChecked: $showT, busChecked: $showBus, showFilterOptions: $showFilterOptions, currAnnotation: $currAnnotation)
                         Button() {
                             showFilterOptions.toggle()
                             currAnnotation.resetAnnotations(showT: showT, showBus: showBus)
@@ -73,13 +72,11 @@ struct MapView: View {
                         }
                     }
                     .padding()
-                }
-                .task{
+                    .task{
                     try!await currStops.update()
                     currAnnotation = AnnotationList(annotations: currStops.stops)
                 }
-                MapPopUpView(trainChecked: $showT, busChecked: $showBus, showFilterOptions: $showFilterOptions, currAnnotation: $currAnnotation)
-            }
+                
         }
     }
     
