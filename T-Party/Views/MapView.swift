@@ -32,7 +32,7 @@ struct MapView: View {
         )
         self._region = State<MKCoordinateRegion>(initialValue: reg)
         
-        }
+    }
     var body: some View {
         ZStack{
             VStack{
@@ -47,23 +47,24 @@ struct MapView: View {
                         }
                     }
                     Button() {
-                        filterOn.toggle()
                         showFilterOptions.toggle()
                     } label: {
-                        if filterOn {
+                        if(showT && showBus) {
+                                Image(systemName: "line.3.horizontal.decrease.circle")
+                                    .font(.system(size: 35))
+                        }
+                        else {
                             Image(systemName: "line.3.horizontal.decrease.circle.fill")
-                                .font(.system(size: 45))
-                        } else {
-                            Image(systemName: "line.3.horizontal.decrease.circle")
-                                .font(.system(size: 45))
+                                .font(.system(size: 35))
                         }
                     }
                     .padding()
                 }
+                .task{
+                    try!await currStops.update()
+                }
             }
-            MapPopUpView(trainChecked: showT, busChecked: showBus, showFilterOptions: $showFilterOptions)
-        } .task{
-            try!await currStops.update()
+            MapPopUpView(trainChecked: $showT, busChecked: $showBus, showFilterOptions: $showFilterOptions)
         }
     }
 }

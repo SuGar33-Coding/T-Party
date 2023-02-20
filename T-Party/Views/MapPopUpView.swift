@@ -9,15 +9,14 @@ import SwiftUI
 
 struct MapPopUpView: View {
     
-    @State var trainChecked: Bool
-    @State var busChecked: Bool
+    @Binding var trainChecked: Bool
+    @Binding var busChecked: Bool
     @Binding var showFilterOptions: Bool
     
     var body: some View {
         if showFilterOptions{
             ZStack{
                 Color.white
-                    .frame(width: 300, height: 200, alignment: .center)
                     .border(.black)
                 VStack(alignment: .trailing){
                     Button() {
@@ -25,8 +24,7 @@ struct MapPopUpView: View {
                     } label: {
                         Image(systemName: "xmark.app")
                             .font(.system(size: 25))
-                    }
-                    .padding()
+                    }.padding()
                     VStack{
                         HStack {
                             CheckBoxView(checked: $trainChecked)
@@ -38,17 +36,17 @@ struct MapPopUpView: View {
                         }
                         
                     }
-                    
+                    .frame(width: 200, height: 100, alignment: .center)
                 }
             }
+            .frame(width: 200, height: 100, alignment: .center)
         }
     }
 
 }
-
 //struct SwiftUIView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        MapPopUpView(trainChecked: false, busChecked: false, showFilterOptions: true)
+//        MapPopUpView(trainChecked: false, busChecked: false, showFilterOptions: showFilterOptions)
 //    }
 //}
 
@@ -64,16 +62,16 @@ struct CheckBoxView: View {
     }
 }
 
-struct CheckBoxView_Previews: PreviewProvider {
-    struct CheckBoxViewHolder: View {
-        @State var checked = false
-
-        var body: some View {
-            CheckBoxView(checked: $checked)
-        }
-    }
-
-    static var previews: some View {
-        CheckBoxViewHolder()
-    }
-}
+//struct CheckBoxView_Previews: PreviewProvider {
+//    struct CheckBoxViewHolder: View {
+//        @State var checked = false
+//
+//        var body: some View {
+//            CheckBoxView(checked: $checked)
+//        }
+//    }
+//
+//    static var previews: some View {
+//        CheckBoxViewHolder()
+//    }
+//}
