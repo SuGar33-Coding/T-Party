@@ -28,15 +28,13 @@ struct ContentView: View {
             }
         } .task {
             try!await currStops.update()
-            print("stop val:", currStops.stops[0].stopName)
+//            print("stop val:", currStops.stops[0].stopName)
         }
     }
 }
 
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+#Preview {
+    ContentView()
 }
 

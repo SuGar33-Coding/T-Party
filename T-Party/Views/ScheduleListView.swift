@@ -31,9 +31,6 @@ struct ScheduleListView: View {
     }
 }
 
-//struct ScheduleListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ScheduleListView(Stops())
-//    }
-//}
-
+#Preview {
+    ScheduleListView()
+}
