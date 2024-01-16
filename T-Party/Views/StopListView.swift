@@ -8,27 +8,20 @@
 import SwiftUI
 
 struct StopListView: View {
-    @State var curStops = [Stop]()
-//    var curStops = mockStops
-
+    @State var curStops = [StopData]()
     
     var body: some View {
         VStack {
             List(curStops, id: \.id) { stop in
-                Text(stop.stopName)
+                Text(stop.name)
             }
         }.onAppear(perform: {
-            let url = URL(string: serverDomain + "/stops")!
-            URLSession.shared.fetchData(at: url) { result in
-                let stops: [Stop] = []
+            Api.fetchAllStops() { result in
                 switch result {
                 case .success(let stopDataList):
-                    for stopData in stopDataList {
-                        curStops.append(Stop(stopData: stopData))
-                    }
+                    curStops = stopDataList
                 case .failure(let error):
-    //                throw ApiError.dataParseError
-                    print("uh oh")
+                    print(error)
                 }
             }
 

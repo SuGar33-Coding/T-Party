@@ -14,7 +14,7 @@ struct StoptionDetailView: View {
     
     init(stopSelected: Stop) {
         self.stop = stopSelected
-        if stopSelected.routeType == "Bus" {
+        if stopSelected.stopData.route.type == RouteType.bus {
             self.color = Color("BusYellow")
         }
         else{

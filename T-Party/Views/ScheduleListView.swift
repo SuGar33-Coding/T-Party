@@ -6,7 +6,6 @@ struct ScheduleListView: View {
     
     @State var schedulePressed = false
     @State var isActive = false
-    @State var currStops = Stops()
     
     var body: some View {
         NavigationView {
@@ -20,8 +19,6 @@ struct ScheduleListView: View {
                             SingleListItemView(thisOne: option)
                         }
                     }
-                }.task{
-                    try!await currStops.update()
                 }
                 
             }

@@ -18,7 +18,6 @@ struct NearbyView: View {
     @State var station = "none yet"
     @State var specList = tList
     @State var filterOn = false
-    @State var currStops = Stops()
     
     var body: some View {
         NavigationView {
@@ -49,8 +48,6 @@ struct NearbyView: View {
                             }
                         }
                         
-                    }.task{
-                        try! await currStops.update()
                     }
                 }.navigationTitle("")
                     .navigationBarHidden(true)

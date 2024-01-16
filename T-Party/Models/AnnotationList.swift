@@ -19,12 +19,12 @@ class AnnotationList {
     func resetAnnotations(showT: Bool, showBus: Bool) {
         visibleAnnotations = []
         for stop in annotations {
-            if stop.routeType == "T" {
+            if stop.stopData.route.type == RouteType.lightRail {
                 if(showT){
                     visibleAnnotations.append(stop)
                 }
             }
-            if stop.routeType == "Bus" {
+            if stop.stopData.route.type == RouteType.bus {
                 if(showBus){
                     visibleAnnotations.append(stop)
                 }

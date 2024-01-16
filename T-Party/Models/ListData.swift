@@ -80,9 +80,14 @@ struct ListData {
     }
 }
 
+var mockStopData = [
+    StopData(id: "1", latitude: 10, longitude: 10, name: "Babcoc", route: RouteData(id: "3", long_name: "Bee Line", type: RouteType.lightRail, color: "ffffff")),
+    StopData(id: "2", latitude: -10, longitude: -10, name: "St Merry", route: RouteData(id: "4", long_name: "Cee Line", type: RouteType.lightRail, color: "ffffff"))
+]
+
 var mockStops = [
-    Stop(stopData: StopData(id: "1", latitude: 10, longitude: 10, name: "Bee Line", route_type: 3)),
-    Stop(stopData: StopData(id: "2", latitude: -10, longitude: -10, name: "Cee Line", route_type: 3))
+    Stop(stopData: mockStopData[0]),
+    Stop(stopData: mockStopData[1])
 ]
 
 var tList = [

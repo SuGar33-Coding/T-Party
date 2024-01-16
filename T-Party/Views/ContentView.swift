@@ -13,7 +13,6 @@ import CoreLocation
 struct ContentView: View {
     
     @State var needToGetLoc = false
-    @State var currStops = Stops()
     @StateObject var manager = LocationManager()
     
     var body: some View {
@@ -30,9 +29,6 @@ struct ContentView: View {
                 .tabItem {
                     Label("Browse", systemImage: "globe")
                 }
-        } .task {
-            try!await currStops.update()
-//            print("stop val:", currStops.stops[0].stopName)
         }
     }
 }

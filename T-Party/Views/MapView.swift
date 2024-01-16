@@ -14,12 +14,12 @@ struct MapView: View {
     var latitude: Double
     var longitude: Double
     @State var region: MKCoordinateRegion
-    @State var currStops = Stops()
+    @State var currStops = mockStops
     @State var showT = true
     @State var showBus = true
     @State var filterOn = false
     @State var showFilterOptions = false
-    @State var currAnnotation = AnnotationList(annotations: [])
+    @State var currAnnotation = AnnotationList(annotations: mockStops)
     
     init(manager: LocationManager) {
         self.usersLocation = manager
@@ -38,7 +38,7 @@ struct MapView: View {
                 ZStack(alignment:.topTrailing){
                     Map(coordinateRegion: $region, showsUserLocation: true, annotationItems: currAnnotation.visibleAnnotations) { item in
                         MapAnnotation(coordinate: item.coords) {
-                            if(item.routeType == "Bus") {
+                            if(item.stopData.route.type == RouteType.bus) {
                                 Circle()
                                     .strokeBorder(.black, lineWidth: 1)
                                     .background(Circle().fill(Color("BusYellow")))
@@ -72,11 +72,6 @@ struct MapView: View {
                         }
                     }
                     .padding()
-                    .task{
-                    try!await currStops.update()
-                    currAnnotation = AnnotationList(annotations: currStops.stops)
-                }
-                
         }
     }
     

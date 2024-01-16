@@ -24,8 +24,9 @@ enum ApiError: Error {
     case dataParseError
 }
 
+// Thanks to https://lukeroberts.co/blog/fetch-data-api/ for this sweet URLSession extension
 extension URLSession {
-    func fetchData(at url: URL, completion: @escaping (Result<[StopData], Error>) -> Void) {
+    func fetchData<T: Decodable>(at url: URL, completion: @escaping (Result<T, Error>) -> Void) {
         self.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -33,8 +34,8 @@ extension URLSession {
             
             if let data = data {
                 do {
-                    let stopDataList = try JSONDecoder().decode([StopData].self, from: data)
-                    completion(.success(stopDataList))
+                    let dataList = try JSONDecoder().decode(T.self, from: data)
+                    completion(.success(dataList))
                 } catch let decoderError {
                     completion(.failure(decoderError))
                 }
@@ -43,8 +44,14 @@ extension URLSession {
     }
 }
 
-class ApiCall {
-//    func fetchAllStops() {
-//        return URLSession.shared.fetchData(at: <#T##URL#>, completion: <#T##(Result<[StopData], Error>) -> Void#>)
-//    }
+struct Api {
+    static func fetchAllStops(completion: @escaping (Result<[StopData], Error>) -> Void) {
+        let url = URL(string: serverDomain + "/stops")!
+        URLSession.shared.fetchData(at: url, completion: completion)
+    }
+    
+    static func fetchAllRoutes(completion: @escaping (Result<[RouteData], Error>) -> Void) {
+        let url = URL(string: serverDomain + "/routes")!
+        URLSession.shared.fetchData(at: url, completion: completion)
+    }
 }
