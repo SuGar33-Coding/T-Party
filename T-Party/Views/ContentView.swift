@@ -25,7 +25,11 @@ struct ContentView: View {
             NearbyView()
                 .tabItem {
                     Label("Nearby", systemImage: "location")
-            }
+                }
+            StopListView()
+                .tabItem {
+                    Label("Browse", systemImage: "globe")
+                }
         } .task {
             try!await currStops.update()
 //            print("stop val:", currStops.stops[0].stopName)

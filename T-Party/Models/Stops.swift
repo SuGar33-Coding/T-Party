@@ -2,7 +2,7 @@ import Foundation
 
 class Stops {
     var urlString: String
-    var stops: [Stop]
+    var stops: [Stop] = []
     
     private init(urlString: String) {
         self.urlString = urlString
@@ -23,18 +23,39 @@ class Stops {
         guard let urlVal = URL(string: self.urlString) else {
             throw ApiError.urlError
         }
-        let (data, response) = try await URLSession.shared.data(for: URLRequest(url: urlVal))
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.badRequest }
-        
-        let stopDataList = try JSONDecoder().decode([StopData].self, from: data)
-        
-        var stopsMid: [Stop] = []
-        
-        for stopData in stopDataList {
-            if stopData.latitude != nil {
-                stopsMid.append(Stop(stopData: stopData))
-            }
-        }
-        self.stops = stopsMid
+        let url = URL(string: urlString)!
+//        URLSession.shared.fetchData(at: url) { result in
+//            switch result {
+//            case .success(let stopDataList):
+//                for stopData in stopDataList {
+//                    self.stops.append(Stop(stopData: <#T##StopData#>))
+//                }
+//            case .failure(let error):
+////                throw ApiError.dataParseError
+//                print("uh oh")
+//            }
+//        }
+//        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.badRequest }
+//        
+//        let stopDataList: [StopData]
+//        do {
+//            stopDataList = try JSONDecoder().decode([StopData].self, from: data)
+//        } catch let decoderError {
+//            throw decoderError
+//        }
+//        
+//        var stopsMid: [Stop] = []
+//        
+//        for stopData in stopDataList {
+//            print("stopData:")
+//            print(stopData.id)
+//            if stopData.latitude != nil {
+//                print("appending")
+//                stopsMid.append(Stop(stopData: stopData))
+//            }
+//        }
+//        self.stops = stopsMid
+//        print("Total stops:")
+//        print(self.stops.count)
     }
 }

@@ -39,8 +39,6 @@ struct StopItemView: View {
     }
 }
 
-struct StopItemView_Previews: PreviewProvider {
-    static var previews: some View {
-        StopItemView()
-    }
+#Preview {
+    StopItemView()
 }

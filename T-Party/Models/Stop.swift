@@ -5,8 +5,8 @@ import CoreLocation
 
 struct StopData: Codable {
     var id: String
-    var latitude: Float?
-    var longitude: Float?
+    var latitude: Float
+    var longitude: Float
     var name: String
     var route_type: Int
 }
@@ -20,8 +20,9 @@ class Stop: Identifiable {
     init(stopData: StopData) {
         self.stopData = stopData
         self.stopName = stopData.name
-        self.coords = CLLocationCoordinate2D(latitude: Double(stopData.latitude!), longitude: Double(stopData.longitude!))
+        self.coords = CLLocationCoordinate2D(latitude: Double(stopData.latitude), longitude: Double(stopData.longitude))
         switch stopData.route_type {
+        // TODO: Figure out all the cases besides 3
         case(0):
             routeType = "T"
         case(1):

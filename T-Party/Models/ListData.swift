@@ -80,6 +80,11 @@ struct ListData {
     }
 }
 
+var mockStops = [
+    Stop(stopData: StopData(id: "1", latitude: 10, longitude: 10, name: "Bee Line", route_type: 3)),
+    Stop(stopData: StopData(id: "2", latitude: -10, longitude: -10, name: "Cee Line", route_type: 3))
+]
+
 var tList = [
     ListData(
         transportType: "OL",
