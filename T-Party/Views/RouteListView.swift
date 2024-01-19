@@ -32,10 +32,7 @@ struct RouteListView: View {
                         
                         Spacer()
                         
-                        if preferences.data.favorites.contains(route.id) {
-                            Image(systemName: "star.fill")
-                                .foregroundStyle(.yellow)
-                        }
+                        FavoriteButton(isSet: preferences.data.favorites.contains(route.id), routeId: route.id)
                     }
                 }
             }
@@ -56,4 +53,5 @@ struct RouteListView: View {
 
 #Preview {
     RouteListView()
+        .environment(Preferences())
 }
