@@ -25,7 +25,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Nearby", systemImage: "location")
                 }
-            StopListView()
+            RouteListView()
                 .tabItem {
                     Label("Browse", systemImage: "globe")
                 }
@@ -36,5 +36,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
+        .environment(Preferences())
 }
 

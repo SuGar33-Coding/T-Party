@@ -11,7 +11,7 @@ enum RouteType: Int, Codable {
     case lightRail = 0, heavyRail, commuterRail, bus, ferry
 }
 
-struct RouteData: Codable {
+struct RouteData: Codable, Equatable {
     var id: String
     var long_name: String
     var short_name: String?

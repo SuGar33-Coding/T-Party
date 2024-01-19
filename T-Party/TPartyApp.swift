@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TPartyApp: App {
+    @State private var preferences = Preferences()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(preferences)
         }
     }
 }

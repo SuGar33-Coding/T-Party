@@ -8,20 +8,44 @@
 import SwiftUI
 
 struct RouteListView: View {
+    @Environment(Preferences.self) var preferences
     @State var routeDataList = [RouteData]()
+    @State var showFavoritesOnly = false
+    
+    var modifiedRouteDataList: [RouteData] {
+        routeDataList.filter { routeData in
+            (!showFavoritesOnly || preferences.data.favorites.contains(routeData.id))
+        }.sorted { // put favorites at the top
+            return preferences.data.favorites.contains($0.id) && !preferences.data.favorites.contains($1.id)
+        }
+    }
     
     var body: some View {
         VStack {
-            List(routeDataList, id: \.id) { route in
-                Text(route.long_name)
+            List {
+                Toggle(isOn: $showFavoritesOnly, label: {
+                    Text("Favorites only")
+                })
+                ForEach(modifiedRouteDataList, id: \.id) { route in
+                    HStack {
+                        RouteListItemView(route: route)
+                        
+                        Spacer()
+                        
+                        if preferences.data.favorites.contains(route.id) {
+                            Image(systemName: "star.fill")
+                                .foregroundStyle(.yellow)
+                        }
+                    }
+                }
             }
+            .animation(.default, value: modifiedRouteDataList)
         }.onAppear(perform: {
             Api.fetchAllRoutes() { result in
                 switch result {
                 case .success(let routeDataList):
                     self.routeDataList = routeDataList
                 case .failure(let error):
-    //                throw ApiError.dataParseError
                     print(error)
                 }
             }
