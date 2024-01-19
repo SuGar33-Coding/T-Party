@@ -13,7 +13,6 @@
 		002DC679298F0C7300B0FFAA /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002DC678298F0C7300B0FFAA /* Stop.swift */; };
 		0075407829185BD300D49C55 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0075407729185BD300D49C55 /* Util.swift */; };
 		00964F1F28F9E905006523CF /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F1E28F9E905006523CF /* Api.swift */; };
-		00964F2228F9EE1C006523CF /* JSONAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 00964F2128F9EE1C006523CF /* JSONAPI */; };
 		00964F242900FD80006523CF /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F232900FD80006523CF /* NearbyView.swift */; };
 		00964F262904ED38006523CF /* StopItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F252904ED38006523CF /* StopItemView.swift */; };
 		00964F2A2906419E006523CF /* LiveSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00964F292906419E006523CF /* LiveSchedule.swift */; };
@@ -78,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00964F2228F9EE1C006523CF /* JSONAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,7 +193,6 @@
 			);
 			name = "T-Party";
 			packageProductDependencies = (
-				00964F2128F9EE1C006523CF /* JSONAPI */,
 			);
 			productName = "T-Party";
 			productReference = 001DEFEB28F3DBD800B9A6EA /* T-Party.app */;
@@ -502,14 +499,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		00964F2128F9EE1C006523CF /* JSONAPI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 00964F2028F9EE1C006523CF /* XCRemoteSwiftPackageReference "JSONAPI" */;
-			productName = JSONAPI;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 001DEFE328F3DBD800B9A6EA /* Project object */;
 }
